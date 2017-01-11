@@ -1,6 +1,137 @@
-/*** GENERAL ***/
-.logo{
-	margin: 0;
+/***** GENERAL *****/
+body{
+	position: relative;
+}
+
+/*** HEADER ***/
+header{
+	border-right-width: 1px; 
+	border-right-style: solid;
+	border-right-color: darken($primary-color, 20);
+	height: 100%;
+	padding: 0 !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	z-index: 100;
+}
+.logo{ 
+	padding: 1em 0 .4em;
+	text-align: center;
+
+	img{
+		margin-bottom: -45px;
+		width: 360px;
+		max-width: 90%;
+	}
+	h1{
+		margin: 0;
+		text-indent: -999999px;
+	}
+}
+nav{
+	ul{
+		padding-left: 0;
+	}
+	li{
+		border-top-width: 1px; 
+		border-top-style: solid;
+		border-top-color: darken($primary-color, 20);
+		border-left-width: 5px; 
+		border-left-style: solid;
+		border-left-color: $primary-color;
+		font-weight: bold;
+		list-style: none;
+		padding: 1.2em 0;
+		text-transform: uppercase;
+		
+		&:last-child{
+			border-bottom-width: 1px; 
+			border-bottom-style: solid;
+			border-bottom-color: darken($primary-color, 20);
+		}
+		&.active{
+			border-left-width: 5px; 
+			border-left-style: solid;
+			border-left-color: $tertiary-color;
+
+			a{
+				color: $secondary-color;
+			}
+		}
+		&:hover a{
+			color: $secondary-color;
+		}	
+		a{
+			color: darken($primary-color, 20);
+			display: inline-block;
+			padding: 0 .8em 0 2.2em;
+			text-decoration: none;
+		}
+		span{
+			color: $quaternary-color;
+			display: block;
+			font-size: .65em;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}	
+}
+
+/*** SECOND NAV ***/
+#second-nav{
+	background-color: $primary-color;
+
+	input[type="search"]{
+		background-color: $primary-color;
+		border: 0;
+		width: auto;
+	}
+	ul{
+		margin: 0;
+		padding: .68em 0;
+	}
+	li{
+		float: right;
+		list-style: none;
+		padding: .5em 1em;
+
+		&:last-child{
+			border-right-width: 1px; 
+			border-right-style: solid;
+			border-right-color: darken($primary-color, 20);
+
+			a{
+				padding-top: 5px;
+    			display: inline-block;
+			}
+			img{
+				margin-top: -5px;
+				width: 25px;
+			}
+		}
+	}
+	a{
+		color: $secondary-color;
+		text-decoration: none;
+
+		&:hover{
+			color: $quaternary-color;
+		}
+	}
+	.user-name{
+		font-weight: bold;
+	}
+}
+
+
+/*** CONTENT ***/
+#main-content{
+	background-color: darken($primary-color, 5);
+	min-height: 100%;
+	width: 100%;
+	padding-left: 300px;
 }
 
 .separation{
@@ -24,7 +155,7 @@
     width: 100%;
 
     &:hover{
-    	background-color: $quaternary-color;
+    	background-color: darken(#3b5998, 10);
     }	
     span{
     	display: inline-block;
@@ -66,11 +197,7 @@ input[type="submit"]{
 	height: 100%;
 
 	.logo{
-		text-align: center;
-
-		img{
-			width: 360px;
-		}
+		padding: 0;
 	}
 	.row, .col-lg-8, .col-lg-4{
 		height: 100%; 

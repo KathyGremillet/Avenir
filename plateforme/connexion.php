@@ -53,7 +53,10 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-6 col-sm-12"></div>
 			<div class="col-lg-4 col-md-6 col-sm-12">
-				<h1 class="logo"><img src="../images/logotype.png"></h1>
+				<div class="logo">
+					<img src="../images/logotype.png" alt="Avenir logotype">
+					<h1 class="">Avenir</h1>
+				</div>
 				
 				<p class="error">
 					<?php
