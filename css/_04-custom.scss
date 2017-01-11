@@ -1,0 +1,134 @@
+/*** GENERAL ***/
+.logo{
+	margin: 0;
+}
+
+.separation{
+	background-color: darken($primary-color, 20);
+	display: block;
+	height: 1px;
+	width: 90%;
+	margin: 1em auto;
+}
+.btn-fb{
+	background-color: #3b5998;
+	border-radius: 25px;
+	color: $primary-color;
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: .5em 0;
+	padding: .8em .3em;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover{
+    	background-color: $quaternary-color;
+    }	
+    span{
+    	display: inline-block;
+    }
+    img{
+    	margin: -4px .5em 0 0;
+    	width: 25px;
+    }
+}
+input{
+	background-color: darken($primary-color, 5);
+	border: 1px solid darken($primary-color, 5);
+	margin: .6em 0;
+	padding: .8em .8em;
+	width: 100%;
+
+	&:focus{
+		outline-color: $tertiary-color;
+	}
+}
+input[type="submit"]{
+	background-color: $tertiary-color;
+	border: none;
+	border-radius: 25px;
+	color: $primary-color;	 
+	font-size: 1.1em;   
+	font-weight: bold;
+    margin: 1.5em 0 .5em;
+    padding: .8em .3em;
+    text-transform: uppercase;
+
+    &:hover{
+    	background-color: $quaternary-color;
+    }
+}
+
+/*** CONNEXION ***/
+.connexion {
+	height: 100%;
+
+	.logo{
+		text-align: center;
+
+		img{
+			width: 360px;
+		}
+	}
+	.row, .col-lg-8, .col-lg-4{
+		height: 100%; 
+	}
+	.col-lg-8{
+		background: url('../images/fond-connexion.jpeg') center center no-repeat;
+		background-size: cover;
+	}
+	.col-lg-4{
+		background: $primary-color;
+		padding: 5em 2em;
+	}
+
+	p.error{
+		color: #f10000;
+		font-weight: bold;
+		height: 20px;
+		text-align: center;
+	}
+	form{
+		text-align: right;
+	}	
+	a.mdp-oublie{
+		color: $quaternary-color;
+		display: inline-block;
+   		margin: 1em 0 .5em;
+
+   		&:hover{
+   			color: $tertiary-color;
+   		}
+	}
+}
+
+
+/********************
+*** MEDIA QUERIES ***
+*********************/
+@media all and (max-width: $sm-screen){
+	.connexion{
+		.col-lg-8{
+			height: 240px;
+		}
+		.col-lg-4{
+			height: auto;
+			padding: 1em 2em;
+		}
+
+	}
+}
+@media all and (max-width: $xs-screen){
+	.connexion{
+		.col-lg-8{
+			height: 200px;
+		}
+		.col-lg-4{
+			height: auto;
+			padding: 1em 1em;
+		}
+
+	}
+}

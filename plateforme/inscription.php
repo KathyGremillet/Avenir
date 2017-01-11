@@ -63,7 +63,7 @@
 	$helper = $fb->getRedirectLoginHelper();
 
 	$permissions = ['email']; // optional
-	$loginUrl = $helper->getLoginUrl('http://localhost/Avenir/pages/login-callback.php', $permissions);
+	$loginUrl = $helper->getLoginUrl('http://localhost/Avenir/plateforme/login-callback.php', $permissions);
 
 ?>
 

@@ -27,14 +27,14 @@ include('settings.php');
 
 			<p>Bonjour <?php echo $user['prenom'] .' '. $user['nom'] ;?>.</p>
 
-			<a href="pages/profil.php?id=<?php echo $id; ?>">Accéder à mon profil</a>
-			<a href="pages/deconnexion.php">Se déconnecter</a>
+			<a href="plateforme/profil.php?id=<?php echo $id; ?>">Accéder à mon profil</a>
+			<a href="plateforme/deconnexion.php">Se déconnecter</a>
 
 			<?php } // Sinon (il est deconnecté)
 		} else { ?>
 
-		<a href="pages/connexion.php">Se connecter</a>
-		<a href="pages/inscription.php">Se créer un compte</a>
+		<a href="plateforme/connexion.php">Se connecter</a>
+		<a href="plateforme/inscription.php">Se créer un compte</a>
 
 		<?php 
 		// Fin du test
