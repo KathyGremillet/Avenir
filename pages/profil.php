@@ -5,9 +5,12 @@
 	if(isset($_GET['id']) AND $_GET['id'] > 0){
 
 		$getID = intval($_GET['id']);
-		$reqUser = $bdd->prepare("SELECT * FROM user WHERE id = ?");
+		$reqUser = $bdd->prepare("SELECT * FROM user, profil WHERE id = ?");
 		$reqUser->execute(array($getID));
 		$userInfo = $reqUser->fetch();
+
+		$cheminCV = "../membres/cv/".$userInfo['cv'];
+		$cheminLM = "../membres/lettreMotivation/".$userInfo['lm'];
 
 ?>
 
@@ -44,6 +47,10 @@
 	Code postal = <?php if(isset($userInfo['cp'])) { echo $userInfo['cp']; } else { echo "Vous n'avez pas encore rempli votre code postal"; } ?>
 	<br>
 	Ville = <?php if(isset($userInfo['ville'])) { echo $userInfo['ville']; } else { echo "Vous n'avez pas encore rempli votre ville"; } ?>
+	<br>
+	CV = <?php if(isset($userInfo['cv'])) { echo '<a target="_blank" href="'.$cheminCV.'" onclick="window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=560,width=770\'); return false;">'.$userInfo['cv'].'</a>'; } else { echo "Vous n'avez pas encore attaché de CV"; } ?>
+	<br>
+	Lettre de motivation = <?php if(isset($userInfo['lm'])) { echo '<a target="_blank" href="'.$cheminLM.'" onclick="window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=560,width=770\'); return false;">'.$userInfo['lm'].'</a>'; } else { echo "Vous n'avez pas encore attaché de lettre de motivation"; } ?>
 	<br>
 	<?php
 	if(isset($_SESSION['id']) AND $userInfo['id'] == $_SESSION['id']) { ?>

@@ -19,13 +19,24 @@
 			if($nomLength <= 25){
 				if($prenomLength <= 25){
 					if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+						
 						$reqmail = $bdd->prepare("SELECT * FROM user WHERE mail = ?");
 						$reqmail->execute(array($mail));
+						
 						$mailexist = $reqmail->rowCount();
 						if($mailexist == 0) {
 							if($pass == $passConf){
+
 								$insertMBR = $bdd->prepare("INSERT INTO user(nom, prenom, mail, password) VALUES(?, ?, ?, ?)");
 								$insertMBR->execute(array($nom, $prenom, $mail, $pass));
+								$lastID = $bdd->lastInsertId();
+
+								if(!empty($lastID)) {
+								
+									$insertAvatar = $bdd->prepare("INSERT INTO profil(idUser) VALUES(?)");
+									$insertAvatar->execute(array($lastID));
+								}
+
 								$erreur = "Votre compte a bien été crée ! <a href=\"connexion.php\">Me connecter</a>";
 							} else {
 								$erreur = "Vos mots de passe ne correspondent pas.";
