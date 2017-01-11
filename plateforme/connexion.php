@@ -36,38 +36,51 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Connexion</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<title>Avenir - La réoriention facile - Connexion</title>
+	<meta name="description" xml:lang="en" content="Avenir - La plateforme de la réoriention facile - Page de connexion" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/global.css" />		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/production.min.js"></script>
 </head>
+
 <body>
+	<div class="wrapper connexion" id="main-content">
+		<div class="row">
+			<div class="col-lg-8 col-md-6 col-sm-12"></div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<h1 class="logo"><img src="../images/logotype.png"></h1>
+				
+				<p class="error">
+					<?php
+						if(isset($erreur)){
+							echo '<font>'.$erreur.'</font>';
+						}
+					?>
+				</p>
+				<form method="post" action="connexion.php">					
+					<input type="text" name="mailConnect" placeholder="Votre mail" value="<?php
+						if(!empty($_POST)){
+							echo $_POST['mailConnect'];
+						}
+					?>">
+					<input type="password" name="mdpConnect" placeholder="Votre mot de passe">
 
-<div align="center">
-	<h2>Connexion</h2>
-	<br><br><br>
-	<form method="post" action="connexion.php">
-		
-		<input type="text" name="mailConnect" placeholder="Votre mail" value="<?php
-			if(!empty($_POST)){
-				echo $_POST['mailConnect'];
-			}
-		?>">
-		<input type="password" name="mdpConnect" placeholder="Votre mot de passe">
+					<a href="#" class="mdp-oublie"> Mot de passe oublié ?</a>
 
-		<input type="submit" name="formConnect" value="Se connecter">
+					<input type="submit" name="formConnect" value="Se connecter">
+				</form>				
 
-	</form>
+				<span class="separation"></span>
 
-	<?php
-		if(isset($erreur)){
-			echo '<font color="red">'.$erreur.'</font>';
-		}
-	?>
+				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Connectez-vous avec Facebook!</a>
 
-	<a href="<?php echo $loginUrl ?>">Connectez-vous avec Facebook!</a>
-
-</div>
-	
+			</div>
+		</div>
+	</div>		
 </body>
 </html>
