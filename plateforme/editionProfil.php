@@ -13,7 +13,6 @@
 			$_SESSION['id']
 			));
 		$profil = $reqProfil->fetch();
-		/*var_dump($profil['idProfil']); die();*/
 
 
 		if(isset($_POST['newNom']) AND !empty($_POST['newNom']) AND $_POST['newNom'] != $user['nom']){
@@ -155,13 +154,13 @@
 
 				if(in_array($extensionUpload, $extensionValides)) {
 
-					$chemin = "../membres/cv/".$profil['idUser']."cv.".$extensionUpload;
+					$chemin = "../membres/cv/".$user['prenom'].'-'.$user['nom']."_cv.".$extensionUpload;
 					$resultat = move_uploaded_file($_FILES['cv']['tmp_name'], $chemin);
 					if($resultat) {
 
 						$updateCV = $bdd->prepare('UPDATE profil SET  cv = :cv WHERE idUser = :id');
 						$updateCV->execute(array(
-							'cv' => $profil['idUser'].'cv.'.$extensionUpload,
+							'cv' => $user['prenom'].'-'.$user['nom'].'_cv.'.$extensionUpload,
 							'id' => $profil['idUser']
 							));
 						header('Location: profil.php?id='.$profil['idUser']);
@@ -193,13 +192,13 @@
 
 				if(in_array($extensionUpload, $extensionValides)) {
 
-					$chemin = "../membres/lettreMotivation/".$profil['idUser']."lm.".$extensionUpload;
+					$chemin = "../membres/lettreMotivation/".$user['prenom'].'-'.$user['nom']."_lm.".$extensionUpload;
 					$resultat = move_uploaded_file($_FILES['lm']['tmp_name'], $chemin);
 					if($resultat) {
 
 						$updateCV = $bdd->prepare('UPDATE profil SET  lm = :lm WHERE idUser = :id');
 						$updateCV->execute(array(
-							'lm' => $profil['idUser'].'lm.'.$extensionUpload,
+							'lm' => $user['prenom'].'-'.$user['nom'].'_lm.'.$extensionUpload,
 							'id' => $profil['idUser']
 							));
 						header('Location: profil.php?id='.$profil['idUser']);
