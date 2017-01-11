@@ -1,7 +1,7 @@
 		</div>
 
 		<footer class="wrapper" id="main-footer">
-			<p>&copy; 2016 Alexandre de Mortemart</p>
+			<p>&copy; 2017 Avenir</p>
 		</footer>
 
 	</body>
