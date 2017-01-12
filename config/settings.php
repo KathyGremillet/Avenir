@@ -15,6 +15,6 @@ catch (Exception $e) {
 	die("Erreur : ".$e->getMessage());
 }
 
-require_once('./functions.php');
+require_once('functions.php');
 
 ?>
