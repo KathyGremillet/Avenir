@@ -17,7 +17,7 @@
 				$userInfo = $reqUser->fetch();
 				$_SESSION['id'] = $userInfo['id'];
 				$_SESSION['mail'] = $userInfo['mail'];
-				header('Location: profil.php?id='.$_SESSION['id']);
+				header('Location: accueil.php?id='.$_SESSION['id']);
 			} else {
 				$erreur = "Mauvais identifiants !";
 			}

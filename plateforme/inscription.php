@@ -37,7 +37,7 @@
 									$insertAvatar->execute(array($lastID));
 								}
 
-								header('Location: profil.php?id='.$lastID);
+								header('Location: accueil.php?id='.$lastID);
 							} else {
 								$erreur = "Vos mots de passe ne correspondent pas.";
 							}
