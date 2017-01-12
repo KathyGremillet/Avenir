@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/production.min.js"></script>
 	<script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="1d13b762-89c4-4f62-a9f5-2ecc98acdc4a";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+	<script src="../js/jquery.matchHeight.js" type="text/javascript"></script>
 </head>
 
 <body class="">
