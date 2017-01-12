@@ -6,9 +6,19 @@
 			<div class="profil-panel col-lg-7">
 				<ul class="clearfix">
 					<li>
-						<a href="#" title="Profil">
+						<a href="./profil.php?id=<?php echo $_SESSION['id']?>" title="Profil">
 							Bonjour <span class="user-name"><?php echo $userInfo['prenom']; ?></span>
-							<img src="" alt="Photo de profil">							
+							<div class="avatar">
+								<?php
+									if(!empty($userInfo['avatar'])) {
+
+									echo '<img src="../membres/avatar/' . $userInfo['avatar'] . '" alt="Photo de profil">';
+								
+									} else{ 
+										echo '<img src="../membres/avatar/default.jpg" alt="Photo de profil par défaut">';
+									}
+								?>
+							</div>							
 						</a>
 					</li>
 					<li>
