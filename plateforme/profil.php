@@ -1,6 +1,6 @@
 <?php
 
-	include('../settings.php');
+	include('../config/settings.php');
 
 	if(isset($_GET['id']) AND $_GET['id'] > 0){
 

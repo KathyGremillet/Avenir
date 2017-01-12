@@ -1,6 +1,6 @@
 <?php
 
-include('../settings.php');
+include('../config/settings.php');
 
 	$_SESSION = array();
 	session_destroy();

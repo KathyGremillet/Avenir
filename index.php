@@ -11,12 +11,12 @@
 	$page = "Accueil";
     $description = "Avenir - La plateforme de la réoriention facile - Page profil";
 
-    include('../includes/headerPlateforme.php');
+    include('includes/headerPlateforme.php');
 ?>
 
 	<div class="accueil" id="main-content">
 
-		<?php include('../includes/secondNav.php'); ?>
+		<?php include('includes/secondNav.php'); ?>
 
 		<div>
 			<div class="complete-profile">
@@ -74,7 +74,7 @@
 	include('../includes/footerPlateforme.php');
 
 	} else {
-		header('Location: connexion.php');
+		header('Location: plateforme/connexion.php');
 	}
 	
 ?>

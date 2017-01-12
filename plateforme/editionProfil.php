@@ -1,6 +1,6 @@
 <?php
 
-	include('../settings.php');
+	include('../config/settings.php');
 
 	if(isset($_SESSION['id'])){
 

@@ -82,7 +82,7 @@ $nom = $user['last_name'];
 
 
 //On vérifie si l'utilisateur est déjà inscrit
-include ('../settings.php');
+include ('../config/settings.php');
 
 $requete_verif = $bdd->prepare('SELECT * FROM user WHERE mail = :mail');
 // on exécute la requête

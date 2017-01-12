@@ -1,6 +1,6 @@
 <?php
 
-	include('../settings.php');
+	include('../config/settings.php');
 	include('../config/fb-settings.php');
 
 	if(isset($_POST['inscription'])) {

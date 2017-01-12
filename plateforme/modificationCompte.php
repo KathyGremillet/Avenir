@@ -1,6 +1,6 @@
 <?php 
 
-include('../settings.php');
+include('../config/settings.php');
 
 // on crée un message d'erreur vide
 $erreur = '';
