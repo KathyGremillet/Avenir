@@ -13,7 +13,7 @@ header{
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 300px;
+	width: 270px;
 	z-index: 100;
 }
 .logo{ 
@@ -130,11 +130,16 @@ nav{
 	.avatar{
 		overflow: hidden;
 		border-radius: 100px;
-		border: 1px solid darken($primary-color, 5);
+		border: 1px solid darken($primary-color, 20);
 		height: 50px;
 		width: 50px;
 		display: inline-block;
 		margin: -17px 0;
+
+		img{
+			height: 100%;
+			width: 100%;
+		}
 	}
 }
 
@@ -144,7 +149,7 @@ nav{
 	background-color: darken($primary-color, 5);
 	min-height: 100%;
 	width: 100%;
-	padding-left: 300px;
+	padding-left: 270px;
 }
 
 .separation{
@@ -219,8 +224,9 @@ h2{
 	text-transform: uppercase;
 }
 .container-content{
-	margin: 2em auto;
-	width: 90%;
+	margin: 0 auto;
+	padding: 1.2em;
+	width: 80%;
 }
 
 /*** CONNEXION ***/
