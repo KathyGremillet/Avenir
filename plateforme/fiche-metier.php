@@ -15,6 +15,10 @@
 ?>
 
 	<div class="fiche-metier" id="main-content">
+
+		<?php include('includes/secondNav.php'); ?>
+
+		
 	</div>
 
 <?php

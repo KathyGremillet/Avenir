@@ -13,7 +13,7 @@ header{
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 270px;
+	width: 250px;
 	z-index: 100;
 }
 .logo{ 
@@ -37,19 +37,19 @@ nav{
 	li{
 		border-top-width: 1px; 
 		border-top-style: solid;
-		border-top-color: darken($primary-color, 20);
+		border-top-color: darken($primary-color, 10);
 		border-left-width: 5px; 
 		border-left-style: solid;
 		border-left-color: $primary-color;
 		font-weight: bold;
 		list-style: none;
-		padding: 1.2em 0;
+		padding: 1em 0;
 		text-transform: uppercase;
 		
 		&:last-child{
 			border-bottom-width: 1px; 
 			border-bottom-style: solid;
-			border-bottom-color: darken($primary-color, 20);
+			border-bottom-color: darken($primary-color, 10);
 		}
 		&.active{
 			border-left-width: 5px; 
@@ -66,6 +66,7 @@ nav{
 		a{
 			color: darken($primary-color, 20);
 			display: inline-block;
+			font-size: .8em;
 			padding: 0 .8em 0 2.2em;
 			text-decoration: none;
 		}
@@ -75,6 +76,15 @@ nav{
 			font-size: .65em;
 			font-weight: bold;
 			text-transform: uppercase;
+		}
+	}		
+}
+.nav-menu{
+	.logo {
+		padding: 2em 0 1.2em;
+
+		img{
+			width: 200px;
 		}
 	}	
 }
@@ -149,7 +159,7 @@ nav{
 	background-color: darken($primary-color, 5);
 	min-height: 100%;
 	width: 100%;
-	padding-left: 270px;
+	padding-left: 250px;
 }
 
 .separation{
