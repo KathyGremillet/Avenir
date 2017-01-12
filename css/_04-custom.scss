@@ -155,7 +155,7 @@ nav{
 .separation{
 	background-color: darken($primary-color, 20);
 	display: block;
-	height: 1px;
+	height: 2px;
 	width: 90%;
 	margin: 1em auto;
 }
@@ -229,8 +229,8 @@ h2{
 	width: 80%;
 }
 
-/*** CONNEXION ***/
-.connexion {
+/*** CONNEXION / INSCRIPTION ***/
+.connexion, .inscription {
 	height: 100%;
 	padding-left: 0 !important;
 

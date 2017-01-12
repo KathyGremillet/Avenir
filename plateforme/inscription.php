@@ -37,7 +37,7 @@
 									$insertAvatar->execute(array($lastID));
 								}
 
-								$erreur = "Votre compte a bien été crée ! <a href=\"connexion.php\">Me connecter</a>";
+								header('Location: profil.php?id='.$lastID);
 							} else {
 								$erreur = "Vos mots de passe ne correspondent pas.";
 							}
@@ -68,47 +68,53 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Inscription</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<title>Avenir - La réoriention facile - Connexion</title>
+	<meta name="description" xml:lang="en" content="Avenir - La plateforme de la réoriention facile - Page de connexion" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/global.css" />		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/production.min.js"></script>
+	<script src="../js/jquery.matchHeight.js" type="text/javascript"></script>
 </head>
+
 <body>
 
-<div align="center">
-	<h2>Inscription</h2>
-	<br><br><br>
-	<form method="post" action="inscription.php">
-		
-		<label for="nom">Votre nom</label>
-		<input type="text" placeholder="Votre nom" name="nom" id="nom" value="<?php if(isset($nom)) { echo $nom; } ?>">
+	<div class="wrapper inscription" id="main-content">
+		<div class="row">
+			<div class="col-lg-8 col-md-6 col-sm-12"></div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="logo">
+					<img src="../images/logotype.png" alt="Avenir logotype">
+					<h1 class="">Avenir</h1>
+				</div>
 
-		<label for="prenom">Votre prénom</label>
-		<input type="text" placeholder="Votre prénom" name="prenom" id="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>">
+				<p class="error">
+					<?php
+						if(isset($erreur)){
+							echo '<font>'.$erreur.'</font>';
+						}
+					?>
+				</p>
+				<form method="post" action="inscription.php">	
+					<input type="text" placeholder="Votre nom" name="nom" id="nom" value="<?php if(isset($nom)) { echo $nom; } ?>">
+					<input type="text" placeholder="Votre prénom" name="prenom" id="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>">
+					<input type="email" placeholder="Votre mail" name="mail" id="mail" value="<?php if(isset($mail)) { echo $mail; } ?>">
+					<input type="password" placeholder="Votre mot de passe" name="password" id="password">		
+					<input type="password" placeholder="Confirmez votre password" name="passwordConfirm" id="passwordConfirm">
+				
+					<input type="submit" name="inscription" value="Je m'inscris">
+				</form>
 
-		<label for="mail">Votre mail</label>
-		<input type="email" placeholder="Votre mail" name="mail" id="mail" value="<?php if(isset($mail)) { echo $mail; } ?>">
-	
-		<label for="password">Votre mot de passe</label>
-		<input type="password" placeholder="Votre mot de passe" name="password" id="password">
-	
-		<label for="passwordConfirm">Confirmez votre mot de passe</label>				
-		<input type="password" placeholder="Confirmez votre password" name="passwordConfirm" id="passwordConfirm">
-	
-		<a href="connexion.php">Je me connecte</a>
-		<input type="submit" name="inscription" value="Je m'inscris">
+				<span class="separation"></span>
 
-	</form>
-
-	<?php
-		if(isset($erreur)){
-			echo '<font color="red">'.$erreur.'</font>';
-		}
-	?>
-
-	<a href="<?php $loginUrl ?>">Inscrivez-vous avec Facebook!</a>
-
-</div>
+				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Inscrivez-vous avec Facebook !</a>
+			</div>
+		</div>
+	</div>
 	
 </body>
 </html>

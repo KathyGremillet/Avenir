@@ -46,6 +46,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/global.css" />		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/production.min.js"></script>
+	<script src="../js/jquery.matchHeight.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 
 				<span class="separation"></span>
 
-				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Connectez-vous avec Facebook!</a>
+				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Connectez-vous avec Facebook !</a>
 
 			</div>
 		</div>
