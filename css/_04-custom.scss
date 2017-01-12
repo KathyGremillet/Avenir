@@ -22,7 +22,7 @@ header{
 
 	img{
 		margin-bottom: -45px;
-		width: 360px;
+		width: 345px;
 		max-width: 90%;
 	}
 	h1{
@@ -157,6 +157,7 @@ nav{
 	display: block;
 	height: 2px;
 	width: 90%;
+	max-width: 450px;
 	margin: 1em auto;
 }
 .btn-fb{
@@ -164,13 +165,13 @@ nav{
 	border-radius: 25px;
 	color: $primary-color;
 	display: inline-block;
-	font-size: 1.1em;
 	font-weight: bold;
 	margin: .5em 0;
 	padding: .8em .3em;
     text-align: center;
     text-decoration: none;
     width: 100%;
+    max-width: 500px;
 
     &:hover{
     	background-color: darken(#3b5998, 10);
@@ -198,8 +199,7 @@ input[type="submit"]{
 	background-color: $tertiary-color;
 	border: none;
 	border-radius: 25px;
-	color: $primary-color;	 
-	font-size: 1.1em;   
+	color: $primary-color;
 	font-weight: bold;
     margin: 1.5em 0 .5em;
     padding: .8em .3em;
@@ -247,6 +247,7 @@ h2{
 	.col-lg-4{
 		background: $primary-color;
 		padding: 5em 2em;
+		text-align: center;
 	}
 
 	p.error{
@@ -256,7 +257,10 @@ h2{
 		text-align: center;
 	}
 	form{
+    	margin: 0 auto;
 		text-align: right;
+		width: 100%;
+		max-width: 500px;
 	}	
 	a.mdp-oublie{
 		color: $quaternary-color;
