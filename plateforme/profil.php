@@ -39,7 +39,7 @@
 			<br>
 			Mail = <?php echo $userInfo['mail']; ?>
 			<br>
-			Âge = <?php echo $userInfo['age']; ?>
+			Âge = <?php if(isset($userInfo['age'])) { echo $userInfo['age']; } else { echo "Vous n'avez pas encore rempli votre âge"; } ?>
 			<br>
 			Adresse = <?php if(isset($userInfo['adresse'])) { echo $userInfo['adresse']; } else { echo "Vous n'avez pas encore rempli votre adresse"; } ?>
 			<br>
