@@ -191,6 +191,24 @@ input[type="submit"]{
     	background-color: $quaternary-color;
     }
 }
+a.btn{
+	background-color: $quaternary-color;
+	color: $primary-color;
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 1em 0 .5em;
+	padding: .8em 2em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+h2{
+	text-transform: uppercase;
+}
+.container-content{
+	margin: 2em auto;
+	width: 90%;
+}
 
 /*** CONNEXION ***/
 .connexion {
@@ -232,9 +250,74 @@ input[type="submit"]{
 	}
 }
 
+/*** ACCUEIL ***/
+.complete-profile{
+	background: url('../images/accueil-complete-profil.png') center center no-repeat;
+	background-size: cover;
+	color: $primary-color;
+	font-weight: bold;
+	padding: 2.2em .5em 1.8em;
+	text-align: center;
+
+	img{
+		width: 95px;
+	}
+	h2{
+		font-size: 1.8em;
+		margin-bottom: .2em;
+	}
+	p{
+		font-size: 1.1em;
+	}
+}
+.news{
+	.bloc-news{		
+		color: $primary-color;
+		margin: 1em 0;
+		text-align: center;
+
+		a{
+			color: $primary-color;
+			display: block;
+			text-decoration: none;
+		}
+		div{
+			background-size: cover !important;
+			border-radius: 10px;
+			padding: 4em .5em;
+		}
+		&:first-child div{
+			background: url('../images/jobfutur.png') center center no-repeat;
+		}
+		&:nth-child(2) div{
+			background: url('../images/portrait.png') center center no-repeat;
+		}
+		&:nth-child(3) div{
+			background: url('../images/ecolecommerce.png') center center no-repeat;
+		}
+		&:nth-child(4) div{
+			background: url('../images/accueil-lesaistu.png') center center no-repeat;
+		}
+		&:last-child div{
+			background: url('../images/accueil-event.png') center center no-repeat;
+		}
+		h2{
+			font-size: 1.8em;
+			margin: .2em 0;
+		}
+		p{
+			margin: .2em;
+		}
+		img{
+			width: 35px;
+			margin-bottom: .7em;
+		}
+	}
+}
+
 
 /********************
-*** MEDIA QUERIES ***
+*** MEDIA QUERIES *** 
 *********************/
 @media all and (max-width: $sm-screen){
 	.connexion{

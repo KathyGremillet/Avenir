@@ -64,9 +64,8 @@
 
 	</div>
 	
-</body>
-</html>
-
 <?php
-}
+
+	include('../includes/footerPlateforme.php');
+	}
 ?>

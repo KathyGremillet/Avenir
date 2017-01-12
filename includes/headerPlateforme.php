@@ -30,10 +30,11 @@
 			</div>
 			<nav class="menu-list">
 			  <ul class="clearfix">
-			  	<li<?php if ($page == 'Accueil') {echo ' class="active"';} ?> ><a href="../index.php">Accueil</a></li>
+			  	<li<?php if ($page == 'Accueil') {echo ' class="active"';} ?> ><a href="./accueil.php">Accueil</a></li>
 				<li<?php if ($page == 'Rechercher') {echo ' class="active"';} ?> ><a href="../plateforme/rechercher.php">Rechercher</a></li>
 				<li<?php if ($page == 'S\'orienter') {echo ' class="active"';} ?> ><a href="../plateforme/s-orienter.php"><span class="premium-tag">Premium</span> S'orienter</a></li>
 				<li<?php if ($page == 'Etre accompagne') {echo ' class="active"';} ?> ><a href="../plateforme/etre-accompagner.php"><span class="premium-tag">Premium</span> Être accompagné</a></li>	
+				<li<?php if ($page == 'Favoris') {echo ' class="active"';} ?> ><a href="../plateforme/favoris.php">Favoris</a></li>
 			  </ul>
 			</nav>			
 		</div>		
