@@ -1,5 +1,6 @@
 /***** GENERAL *****/
 body{
+	color: $secondary-color;
 	position: relative;
 }
 
@@ -171,6 +172,16 @@ nav{
 	width: 100%;
 	padding-left: 250px;
 }
+p{
+	line-height: 1.5;
+}
+a{
+	color: $secondary-color;
+
+	&:hover{
+		color: $quaternary-color;
+	}
+}
 
 .separation{
 	background-color: darken($primary-color, 20);
@@ -231,6 +242,7 @@ input[type="submit"]{
 }
 a.btn{
 	background-color: $quaternary-color;
+	border-radius: 4px;
 	color: $primary-color;
 	display: inline-block;
 	font-size: 1.15em;
@@ -239,6 +251,29 @@ a.btn{
 	padding: .8em 2em;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	&:hover{
+		background-color: $tertiary-color;
+	}	
+}
+a.btn-secondaire{
+	background-color: $tertiary-color;
+	font-size: 1em;
+
+	&:hover{
+		background-color: $quaternary-color;
+	}
+}
+a.btn-retour{
+	background-color: initial;
+	border: 3px solid $tertiary-color;
+	color: $tertiary-color;
+	font-size: 1em;
+	padding: .6em 2em;
+
+	&:hover{
+		color: $primary-color;
+	}
 }
 h2{
 	text-transform: uppercase;
@@ -361,13 +396,108 @@ h2{
 
 /*** FICHES ***/
 .fiches{
-	margin: 1.5em auto;
+	margin: 0 auto;
+    padding: 1.5em 0 2em;
 	width: 90%;
 
-	
-}
-/*** Fiche métier ***/
+	> div:first-child{
+		text-align: right;
+	}	
 
+	.fiche{
+		background-color: $primary-color;
+		margin-top: 1.5em;
+	}
+	.header-fiche{
+		background-size: cover !important;
+		color: $primary-color;
+		padding: 2.2em 2.8em;
+
+		h2{
+			font-size: 2.2em;
+			margin-top: 2.5em;
+		}
+		p{
+			font-size: 1.2em;
+		}
+	}
+	a.btn-favoris{
+		background-color: initial;
+		border: 3px solid $primary-color;
+		color: $primary-color;
+		font-size: 1em;
+		margin: 0;
+		padding: .6em 2em;
+		text-transform: none;
+
+		&:hover{
+			background-color: $primary-color;
+			color: $tertiary-color;
+		}
+	}	
+	.content-fiche{
+		padding: 2em 2.8em;
+	}
+	.informations{
+		p{
+			margin: 0.6em 0;
+		}
+		strong{
+			display: inline-block;
+			width: 245px;
+		}
+	}
+	h3{
+		border-radius: 0 50px 50px 0;
+		color: $primary-color;
+		display: inline-block;
+		font-size: 1.5em;
+		margin-left: -1.87em;
+		margin-top: 2em;
+		padding: .6em 2.5em .6em 1.75em;
+		text-transform: uppercase;
+	}
+	h4{
+		font-size: 1.4em;
+	}
+}
+
+/*** Fiche métier ***/
+.fiche-metier{
+	.header-fiche{
+		background: url('../images/avenir-fiche-metier_header.png') top center no-repeat;
+	}
+	h3{
+		background-color: #3aedcc;
+	}
+	.competences{
+		h4{
+			font-size: 1.7em;
+    		margin-bottom: 1em;
+		}
+		ul{
+			margin: 0;
+			padding-left: 0;
+		}
+		li{
+			background-color: #f25b61;
+			border-radius: 4px;
+			color: $primary-color;
+			display: inline-block;
+			font-weight: bold;
+			margin-right: 5px;
+			padding: .7em 1em;
+		}
+	}
+	.etudes{
+		div{
+			margin-bottom: 1.5em;
+		}
+		p{
+			margin: .5em;
+		}
+	}
+}
 
 /********************
 *** MEDIA QUERIES *** 
