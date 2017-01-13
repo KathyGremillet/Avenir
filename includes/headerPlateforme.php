@@ -33,7 +33,7 @@
 	<header class="" id="main-header">
 		<div class="nav-menu">			
 			<div class="logo">
-				<img src="../images/logotype.png" alt="Avenir logotype">
+				<img src="../images/logo-avenir-baseline.png" alt="Avenir logotype">
 				<h1 class="">Avenir</h1>
 			</div>
 			<nav class="menu-list">
