@@ -20,15 +20,15 @@
 
 		<div class="fiches">
 			<div>
-				<a href="#" title="Retour à la recherche" class="btn">Retour à la recherche</a>
-				<a href="#" title="Etre accompagné" class="btn">Je veux être accompagné</a>
+				<a href="#" title="Retour à la recherche" class="btn btn-retour">Retour à la recherche</a>
+				<a href="#" title="Etre accompagné" class="btn btn-secondaire">Je veux être accompagné</a>
 			</div>
 
 			<div class="fiche">
 				<div class="header-fiche">
-					<a href="#" title="Ajouter aux favoris" class="btn">Ajouter aux favoris</a>
+					<a href="#" title="Ajouter aux favoris" class="btn btn-favoris">Ajouter aux favoris</a>
 					<h2>Acheteur / Acheteuse d'espaces publicitaires</h2>
-					<p>Blablabla tzyeuirtgjzoe euziropgbj ueoizrjgk</p>
+					<p>Panneau d'affichage, passage à la radio ou à la télé, encart dans la presse... l'acheteur d'espaces publicitaires doit trouver le meilleur emplacement et au meilleur prix pour offrir à l'annonceur la plus grande visibilité pour sa publicité.</p>
 				</div>
 				<div class="content-fiche">
 					<div class="informations">
@@ -58,32 +58,35 @@
 						<p>L'achat d'espaces dans les médias peut représenter jusqu'à 80 % du coût d'une campagne publicitaire. L'acheteur doit donc négocier, quel que soit le support
 		retenu, et toujours chercher à obtenir le meilleur rapport qualité-prix.</p>
 
-						<h4>Compétences requises</h4>
-						<ul>
-							<li>Sens du contact</li>
-							<li>Résistance au stress</li>
-							<li>Spécialisation et technicité</li>
-						</ul>
+						<div class="competences">
+							<h4>Compétences requises</h4>
+							<ul>
+								<li>Sens du contact</li>
+								<li>Résistance au stress</li>
+								<li>Spécialisation et technicité</li>
+							</ul>
+						</div>
+						
 					</div>
 
 					<div class="etudes">
 						<h3>études</h3>
 
-						<p>
-							<span class="niveau">bac + 2</span>
-							<a href="#">BTS Communication</a><br>
-							<a href="#">DUT Information-communication option publicité</a>
-						</p>
-						<p>
-							<span class="niveau">bac + 3</span>
-							<a href="#">Licence pro e-commerce et marketing numérique</a><br>
-							<a href="#">Licence pro métiers du marketing opérationnel</a>
-						</p>
-						<p>
-							<span class="niveau">bac + 5</span>
-							<a href="#">Master marketing, vente</a><br>
-							<a href="#">Master pro information et communication spécialité marketing, publicité et communication</a>
-						</p>
+						<div>
+							<p><strong class="niveau">bac + 2</strong></p>
+							<p><a href="#">BTS Communication</a></p>
+							<p><a href="#">DUT Information-communication option publicité</a></p>
+						</div>
+						<div>
+							<p><strong class="niveau">bac + 3</strong></p>
+							<p><a href="#">Licence pro e-commerce et marketing numérique</a></p>
+							<p><a href="#">Licence pro métiers du marketing opérationnel</a></p>
+						</div>
+						<div>
+							<p><strong class="niveau">bac + 5</strong></p>
+							<p><a href="#">Master marketing, vente</a></p>
+							<p><a href="#">Master pro information et communication spécialité marketing, publicité et communication</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
