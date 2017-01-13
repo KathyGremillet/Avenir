@@ -56,7 +56,7 @@
 			<?php
 			if(isset($_SESSION['id']) AND $userInfo['id'] == $_SESSION['id']) { ?>
 				<a href="editionProfil.php">Editer mon profil</a>
-				<a href='../index.php'>Retourner sur l'accueil</a>
+				<a href='accueil.php'>Retourner sur l'accueil</a>
 				<a href="deconnexion.php">Se déconnecter</a>
 			<?php } ?>
 

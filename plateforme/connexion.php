@@ -55,7 +55,7 @@
 			<div class="col-lg-8 col-md-6 col-sm-12"></div>
 			<div class="col-lg-4 col-md-6 col-sm-12">
 				<div class="logo">
-					<img src="../images/logotype.png" alt="Avenir logotype">
+					<img src="../images/logo-avenir-baseline.png" alt="Avenir logotype">
 					<h1 class="">Avenir</h1>
 				</div>
 				

@@ -60,7 +60,7 @@
 				<div class="col-lg-4 bloc-news">
 					<a href="#" title="Les événements">
 						<div class="">
-							<img src="images/icon-event.png">
+							<img src="../images/icon-event.png">
 							<h2>événements</h2>
 						</div>
 					</a>
