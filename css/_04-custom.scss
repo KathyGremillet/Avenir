@@ -44,6 +44,7 @@ nav{
 		border-left-color: $primary-color;
 		font-size: 1.1em;
 		font-weight: bold;
+		line-height: 1;
 		list-style: none;
 		padding: 1em 0;
 		text-transform: uppercase;
@@ -182,6 +183,10 @@ a{
 		color: $quaternary-color;
 	}
 }
+li{
+	line-height: 1.5;
+	list-style: none;
+}
 
 .separation{
 	background-color: darken($primary-color, 20);
@@ -206,6 +211,7 @@ a{
 
     &:hover{
     	background-color: darken(#3b5998, 10);
+    	color: $primary-color;
     }	
     span{
     	display: inline-block;
@@ -330,7 +336,7 @@ h2{
 
 /*** ACCUEIL ***/
 .complete-profile{
-	background: url('../images/accueil-complete-profil.png') center center no-repeat;
+	background: url('../images/avenir-accueil-complete-profil.png') center center no-repeat;
 	background-size: cover;
 	color: $primary-color;
 	font-weight: bold;
@@ -377,7 +383,7 @@ h2{
 			background: url('../images/accueil-lesaistu.png') center center no-repeat;
 		}
 		&:last-child div{
-			background: url('../images/accueil-event.png') center center no-repeat;
+			background: url('../images/avenir-accueil-event.png') center center no-repeat;
 		}
 		h2{
 			font-size: 2.1em;
@@ -498,6 +504,60 @@ h2{
 		}
 	}
 }
+/*** Fiche école ***/
+.fiche-ecole{
+	.header-fiche{
+		background: url('../images/avenir-fiche-ecole_header.png') top center no-repeat;
+
+		h2{
+			margin-top: 4.5em;
+		}
+	}
+	h3{
+		background-color: #f25b61;
+	}	
+}
+/*** Fiche formation ***/
+.fiche-formation{
+	.header-fiche{
+		background: url('../images/avenir-fiche-formation_header.png') top center no-repeat;
+
+		h2{
+			margin-top: 4.5em;
+		}
+	}
+	h3{
+		background-color: #521ab3;
+	}
+	table{
+		font-weight: bold;
+		width: 100%;
+
+		td{
+			padding: 1em .6em;
+
+			&:first-child{
+				width: 70%;
+			}
+			&:nth-child(2){
+				width: 10%;
+			}
+			&:last-child{
+				width: 20%;
+			}
+		}
+		thead{
+			border-bottom: 3px solid darken($primary-color, 15);
+			color: darken($primary-color, 30);
+		}
+		tbody{
+			tr:nth-child(2n){
+				background-color: darken($primary-color, 5);
+			}
+		}
+	}
+}
+
 
 /********************
 *** MEDIA QUERIES *** 

@@ -8,7 +8,7 @@
 		$reqUser->execute(array($_SESSION['id']));
 		$userInfo = $reqUser->fetch();
 
-	$page = "Mes tests";
+	$page = "M'orienter";
     $description = "Avenir - La plateforme de la réoriention facile - Fiche métier";
 
     include('../includes/headerPlateforme.php');
