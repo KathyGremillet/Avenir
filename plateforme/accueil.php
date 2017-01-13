@@ -23,7 +23,7 @@
 				<img src="../images/mascotte.png" alt="Image de la mascotte d'Avenir"/>
 				<h2>Complète ton profil</h2>
 				<p>Pour profiter de notre expertise et trouver ta voie, complète entièrement ton profil.</p>
-				<a href="plateforme/editionProfil.php" class="btn">Je fonce</a>
+				<a href="editionProfil.php" class="btn">Je fonce</a>
 			</div>
 			<div class="news row container-content">
 				<div class="col-lg-4 bloc-news">

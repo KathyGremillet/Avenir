@@ -14,11 +14,11 @@
     include('../includes/headerPlateforme.php');
 ?>
 
-	<div class="fiche-metier fiches" id="main-content">
+	<div class="fiche-metier" id="main-content">
 
 		<?php include('../includes/secondNav.php'); ?>
 
-		<div class="">
+		<div class="fiches">
 			<div>
 				<a href="#" title="Retour à la recherche" class="btn">Retour à la recherche</a>
 				<a href="#" title="Etre accompagné" class="btn">Je veux être accompagné</a>
