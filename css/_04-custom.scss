@@ -17,7 +17,7 @@ header{
 	z-index: 100;
 }
 .logo{ 
-	padding: 1em 0 .4em;
+	padding: 1.5em 0 .4em;
 	text-align: center;
 
 	img{
@@ -41,6 +41,7 @@ nav{
 		border-left-width: 5px; 
 		border-left-style: solid;
 		border-left-color: $primary-color;
+		font-size: 1.1em;
 		font-weight: bold;
 		list-style: none;
 		padding: 1em 0;
@@ -66,14 +67,14 @@ nav{
 		a{
 			color: darken($primary-color, 20);
 			display: inline-block;
-			font-size: .8em;
+			font-size: .9em;
 			padding: 0 .8em 0 2.2em;
 			text-decoration: none;
 		}
 		span{
 			color: $quaternary-color;
 			display: block;
-			font-size: .65em;
+			font-size: .7em;
 			font-weight: bold;
 			text-transform: uppercase;
 		}
@@ -100,12 +101,12 @@ nav{
 	}
 	ul{
 		margin: 0;
-		padding: .68em 0;
+		padding: .61em 0;
 	}
 	li{
 		float: right;
 		list-style: none;
-		padding: .5em 1em;
+		padding: .2em 1em;
 
 		&:last-child{
 			border-right-width: 1px; 
@@ -141,14 +142,23 @@ nav{
 		overflow: hidden;
 		border-radius: 100px;
 		border: 1px solid darken($primary-color, 20);
-		height: 50px;
-		width: 50px;
+		height: 45px;
+		width: 45px;
 		display: inline-block;
-		margin: -17px 0;
+		margin: -18px 0 -14px 5px;
 
 		img{
 			height: 100%;
 			width: 100%;
+		}
+	}
+	.search-panel{
+		img{
+			width: 28px;
+		}
+		input{
+			margin: .4em 0;
+			padding: .61em;
 		}
 	}
 }
@@ -223,7 +233,7 @@ a.btn{
 	background-color: $quaternary-color;
 	color: $primary-color;
 	display: inline-block;
-	font-size: 1.1em;
+	font-size: 1.15em;
 	font-weight: bold;
 	margin: 1em 0 .5em;
 	padding: .8em 2em;
@@ -296,11 +306,11 @@ h2{
 		width: 95px;
 	}
 	h2{
-		font-size: 1.8em;
+		font-size: 2.1em;
 		margin-bottom: .2em;
 	}
 	p{
-		font-size: 1.1em;
+		font-size: 1.3em;
 	}
 }
 .news{
@@ -317,7 +327,7 @@ h2{
 		div{
 			background-size: cover !important;
 			border-radius: 10px;
-			padding: 4em .5em;
+			padding: 5em .5em;
 		}
 		&:first-child div{
 			background: url('../images/jobfutur.png') center center no-repeat;
@@ -335,10 +345,11 @@ h2{
 			background: url('../images/accueil-event.png') center center no-repeat;
 		}
 		h2{
-			font-size: 1.8em;
+			font-size: 2.1em;
 			margin: .2em 0;
 		}
 		p{
+			font-size: 1.15em;
 			margin: .2em;
 		}
 		img{
@@ -347,6 +358,9 @@ h2{
 		}
 	}
 }
+
+/*** FICHES ***/
+/*** Fiche métier ***/
 
 
 /********************
