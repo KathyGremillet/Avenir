@@ -18,12 +18,12 @@ $tertiary-color: 		#ffc305;
 $quaternary-color: 		#8d42a5;
 
 /* fonts */
-/*@include declare-font-face(Oswald, Oswald-Regular, normal);*/
+@include declare-font-face(Typicons, typicons, normal);
 
 $logo-font-family: Helvetica, Arial, sans-serif;
 $base-font-family: Helvetica, Arial, sans-serif;
 $headings-font-family: Helvetica, Arial, sans-serif;
-$nav-font-family: Helvetica, Arial, sans-serif; 
+$nav-font-family: Helvetica, Arial, sans-serif;  
 
 $base-font-size: 16px;
 $h1-font-size: 2.2em; 

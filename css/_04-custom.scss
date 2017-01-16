@@ -400,6 +400,115 @@ h2{
 	}
 }
 
+/*** PROFIL ***/
+.profil{
+	margin: 0 auto;
+    padding: 1.5em 0 2em;
+	width: 90%;
+
+	h2{
+		text-transform: none;
+	}
+	h4{
+		margin: 0;
+	}
+	h5{
+		margin: 0;
+		text-transform: uppercase;
+	}
+	.blocs{
+		background-color: $primary-color;
+		border-radius: 4px;
+		padding: 1em;
+		position: relative;
+	}
+	.row{
+		margin-bottom: 2em;
+	}
+	.presentation .blocs{
+		height: 100%;
+	}
+	.avatar, .infos{
+		float: left;
+	}
+	.avatar{
+		overflow: hidden;
+		border-radius: 100px;
+		border: 1px solid darken($primary-color, 20);
+		width: 120px;
+		height: 120px;
+
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.cv, .lm{
+		div{
+			border-radius: 4px;
+			height: 100%;
+			padding: 2em .5em;
+			position: relative;
+			text-align: center;
+		}	
+		p{
+			color: $primary-color;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		img{
+			width: 70%;
+		}
+		span{
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+		}
+	}
+	.cv div{
+		background-color: #521ab3;
+	}
+	.lm div{
+		background-color: $tertiary-color;
+	}
+	.typcn{
+		font-size: 1.2em;
+	}
+	.typcn-edit{
+		color: darken($primary-color, 30);
+		font-size: 1.5em;
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+	}
+	.competences, .ctr-interets{
+		position: relative;
+
+		ul{
+			margin: 0;
+			padding-left: 0;
+		}
+		li{
+			background-color: #f25b61;
+			border-radius: 4px;
+			color: $primary-color;
+			display: inline-block;
+			font-weight: bold;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			padding: .7em 1em;
+		}
+		.typcn-edit{
+			bottom: initial;
+			top: 1em;
+			right: 1em;
+		}
+	}
+	.ctr-interets li{
+		background-color: $tertiary-color;
+	}
+}
+
 /*** FICHES ***/
 .fiches{
 	margin: 0 auto;
