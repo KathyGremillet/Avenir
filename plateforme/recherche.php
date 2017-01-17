@@ -44,19 +44,26 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 }
 // Fin recherche
 
+if(isset($_GET['id']) AND $_GET['id'] > 0){
+
+	$getID = intval($_GET['id']);
+	$reqUser = $bdd->prepare("SELECT * FROM user, profil WHERE id = ?");
+	$reqUser->execute(array($getID));
+	$userInfo = $reqUser->fetch();
+
+
+$page = "Profil";
+$description = "Avenir - La plateforme de la réoriention facile - Page profil";
+
+include('../includes/headerPlateforme.php');
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>Fiche métiers</title>
-</head>
-<body>
-<?php
-print_r($_POST);
-?>
+	<div class="" id="main-content">
+		
+		<?php include('../includes/secondNav.php'); ?>
+
+
 
 
 <!-- Début recherche -->
@@ -104,6 +111,11 @@ print_r($_POST);
 <?php } ?>
 
 </table>
+
+	</div>
 	
-</body>
-</html>
+<?php
+
+	include('../includes/footerPlateforme.php');
+	}
+?>

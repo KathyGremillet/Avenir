@@ -13,8 +13,8 @@
 		$cheminLM = "../membres/lettreMotivation/".$userInfo['lm'];
 
 
-	$page = "Profil";
-    $description = "Avenir - La plateforme de la réoriention facile - Page profil";
+	$page = "M'orienter";
+    $description = "Avenir - La plateforme de la réoriention facile - Page de recherche";
 
     include('../includes/headerPlateforme.php');
 ?>
@@ -58,21 +58,21 @@
 							</div>
 						</div>
 						
-						<span class="typcn typcn-edit"></span>
+						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>					
 				</div>
 				<div class="cv col-lg-2">
 					<div>
 						<img src="../images/profil-cv.png" alt="Icône CV">
 						<p>CV</p>
-						<span class="typcn typcn-download-outline"></span>
+						<a href="editionProfil.php"><span class="typcn typcn-download-outline"></span></a>
 					</div>
 				</div>
 				<div class="lm col-lg-2">
 					<div>
 						<img src="../images/profil-LettreDeMotivation.png" alt="Icône Lettre de motivation">
 						<p>Lettre de motivation</p>
-						<span class="typcn typcn-download-outline"></span>
+						<a href="editionProfil.php"><span class="typcn typcn-download-outline"></span></a>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 							<h5>Entreprise</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 						</div>
-						<span class="typcn typcn-edit"></span>
+						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
 				</div>
 				<div class="cursus col-lg-6">
@@ -106,7 +106,7 @@
 							<h5>École</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 						</div>
-						<span class="typcn typcn-edit"></span>
+						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
 				</div>
 			</div>
@@ -118,7 +118,7 @@
 						<li>Résistance au stress</li>
 						<li>Spécialisation et technicité</li>
 					</ul>
-					<span class="typcn typcn-edit"></span>
+					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
 				<div class="ctr-interets col-lg-6">
 					<h3><span class="typcn typcn-heart-outline"></span> Centres d'intérêts</h3>
@@ -128,7 +128,7 @@
 						<li>Partir à l'aventure</li>
 						<li>Manager</li>
 					</ul>
-					<span class="typcn typcn-edit"></span>
+					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
 			</div>
 		</div>	
