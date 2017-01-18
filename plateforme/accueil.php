@@ -43,10 +43,10 @@
 					</a>
 				</div>
 				<div class="col-lg-4 bloc-news">
-					<a href="#" title="Top 5 des écoles de commerce gratuites">
+					<a href="top5-ecoles-commerce.php" title="Top 5 des écoles de commerce">
 						<div class="">
 							<h2>Top 5</h2>
-							<p>écoles de commerce gratuites</p>
+							<p>&Eacute;coles de commerce</p>
 						</div>
 					</a>
 				</div>

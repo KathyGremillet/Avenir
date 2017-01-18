@@ -19,7 +19,7 @@
 
 		<div class="content-container">
 			<div>
-				<a href="#" title="Retour à la recherche" class="btn btn-retour">Retour à l'accueil</a>
+				<a href="accueil.php" title="Retour à l'accueil'" class="btn btn-retour">Retour à l'accueil</a>
 			</div>
 
 			<div class="article">
