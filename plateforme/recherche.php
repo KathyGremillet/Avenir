@@ -25,22 +25,21 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 		$req = $bdd->prepare('SELECT * FROM fiche_metier WHERE CONCAT(metier, domaine, description) LIKE "%'.$q.'%" ORDER BY id DESC');
 		$req->execute();
 	}
-}else{
-	if(isset($_POST['critere1']) || isset($_POST['critere2'])) {
-		$sqlConditions = "";
-		if (isset($_POST['critere1']) && !empty($_POST['critere1']) && $_POST['critere1'] != 'tous'){
-			$sqlConditions .= " and domaine =\"". $_POST['critere1'] ."\"";
-		}
-		if (isset($_POST['critere2']) && !empty($_POST['critere2']) && $_POST['critere2'] != 'tous'){
-			$sqlConditions .= " and test =\"". $_POST['critere2'] ."\"";
-		}
-		$sqlQuery = "SELECT * FROM fiche_metier WHERE 1 ". $sqlConditions ." ORDER BY id DESC";
-		$req = $bdd->prepare($sqlQuery);
-		$req->execute();
-	}
-
-
 }
+
+if(isset($_POST['critere1']) || isset($_POST['critere2'])) {
+	$sqlConditions = "";
+	if (isset($_POST['critere1']) && !empty($_POST['critere1']) && $_POST['critere1'] != 'tous'){
+		$sqlConditions .= " and domaine =\"". $_POST['critere1'] ."\"";
+	}
+	if (isset($_POST['critere2']) && !empty($_POST['critere2']) && $_POST['critere2'] != 'tous'){
+		$sqlConditions .= " and test =\"". $_POST['critere2'] ."\"";
+	}
+	$sqlQuery = "SELECT * FROM fiche_metier WHERE 1 ". $sqlConditions ." ORDER BY id DESC";
+	$req = $bdd->prepare($sqlQuery);
+	$req->execute();
+}
+
 // Fin recherche
 
 if(isset($_SESSION['id']) AND $_SESSION['id'] > 0){
@@ -62,7 +61,7 @@ include('../includes/headerPlateforme.php');
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="content-container">
-			<h2><?php $t = $titre->fetch(); echo count($r);?> fiches métiers</h2>
+			<h2>Résultat fiches métiers</h2>
 			<span class="titre-deco"></span>
 
 			<!-- Champ de recherche -->
