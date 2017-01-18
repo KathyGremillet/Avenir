@@ -11,14 +11,14 @@ $titre->execute();
 $optionDomaine = $bdd->prepare('SELECT DISTINCT domaine FROM fiche_metier');
 $optionDomaine->execute();
 
-/*$optionTest = $bdd->prepare('SELECT DISTINCT test FROM fiche_metier');
-$optionTest->execute();*/
-
 $optionSalaire = $bdd->prepare('SELECT DISTINCT salaire FROM fiche_metier');
 $optionSalaire->execute();
 
 $optionEtude = $bdd->prepare('SELECT DISTINCT niveauMinimum FROM fiche_metier');
 $optionEtude->execute();
+
+$optionStatut = $bdd->prepare('SELECT DISTINCT statut FROM fiche_metier');
+$optionStatut->execute();
 
 
 // Début recherche
@@ -44,6 +44,9 @@ if(isset($_POST['critere1']) || isset($_POST['critere2']) || isset($_POST['crite
 	}
 	if (isset($_POST['critere3']) && !empty($_POST['critere3']) && $_POST['critere3'] != 'tous'){
 		$sqlConditions .= " and niveauMinimum =\"". $_POST['critere3'] ."\"";
+	}
+	if (isset($_POST['critere4']) && !empty($_POST['critere4']) && $_POST['critere4'] != 'tous'){
+		$sqlConditions .= " and statut =\"". $_POST['critere4'] ."\"";
 	}
 
 	$sqlQuery = "SELECT * FROM fiche_metier WHERE 1 ". $sqlConditions ." ORDER BY id DESC";
@@ -104,6 +107,13 @@ include('../includes/headerPlateforme.php');
 					<?php } ?>
 				</select>
 
+				<select name="critere4" id="">
+						<option value="tous">Tous</option>
+					<?php while($oSt = $optionStatut->fetch()) {?>
+						<option  value="<?php echo $oSt['statut']; ?>"><?php echo $oSt['statut']; ?></option>
+					<?php } ?>
+				</select>
+
 				<input type="submit" value="Rechercher">
 			</form>
 
@@ -117,6 +127,7 @@ include('../includes/headerPlateforme.php');
 							<td>Domaine</td>
 							<td>Salaire minimum</td>
 							<td>Niveau minimum</td>
+							<td>Statut</td>
 						</tr>
 					</thead>
 
@@ -125,10 +136,11 @@ include('../includes/headerPlateforme.php');
 
 							?>
 						<tr>
-							<td><?php echo $r['metier']; ?></td>
+							<td><a href="fiche-metier.php?id=<?php echo $r['id']; ?>"><?php echo $r['metier']; ?></a></td>
 							<td><?php echo $r['domaine']; ?></td>
-							<td><?php echo $r['salaire']; ?></td>
+							<td><?php echo $r['salaire']; ?> €</td>
 							<td><?php echo $r['niveauMinimum']; ?></td>
+							<td><?php echo $r['statut']; ?></td>
 						</tr>
 						<?php } ?>
 					</tbody>
