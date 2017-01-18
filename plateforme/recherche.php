@@ -49,82 +49,74 @@ if(isset($_GET['id']) AND $_GET['id'] > 0){
 	$userInfo = $reqUser->fetch();
 
 
-$page = "Profil";
-$description = "Avenir - La plateforme de la réoriention facile - Page profil";
+$page = "M'orienter";
+$description = "Avenir - La plateforme de la réoriention facile - Page de recherche";
 
 include('../includes/headerPlateforme.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>Fiche métiers</title>
-</head>
-<body>
-
-	<div class="" id="main-content">
-		
+	<div class="recherche" id="main-content">
+	
 		<?php include('../includes/secondNav.php'); ?>
 
+		<div class="">
+			<h2><?php $r = $req->fetch(); echo count($r);?> fiches métiers</h2>
+			<span class="titre-deco"></span>
 
+			<!-- Champ de recherche -->
+			<form method="get">
+				<input type="search" name="q" placeholder="Rechercher ...">
+				<input type="submit" value="Valider">
+			</form>
 
+			<!-- Filtres -->
+			<form action="" method="post">
+				<select  name="critere1" id="">
+						<option value="tous">Tous</option>
+					<?php while($oD = $optionDomaine->fetch()) {?>
+						<option value="<?php echo $oD['domaine']; ?>"><?php echo $oD['domaine']; ?></option>
+					<?php } ?>
+				</select>
 
-<!-- Début recherche -->
-<form method="get">
-	<input type="search" name="q" placeholder="Rechercher ...">
-	<input type="submit" value="Valider">
-</form>
-<!-- Fin recherche -->
-<br>
+				<select name="critere2" id="">
+						<option value="tous">Tous</option>
+					<?php while($oT = $optionTest->fetch()) {?>
+						<option  value="<?php echo $oT['test']; ?>"><?php echo $oT['test']; ?></option>
+					<?php } ?>
+				</select>
 
-<form action="" method="post">
+				<input type="submit" value="Rechercher">
+			</form>
 
-	<select  name="critere1" id="">
-			<option value="tous">Tous</option>
-		<?php while($oD = $optionDomaine->fetch()) {?>
-			<option value="<?php echo $oD['domaine']; ?>"><?php echo $oD['domaine']; ?></option>
-		<?php } ?>
-	</select>
+			<?php if($req->rowCount() > 0 ) { ?>
 
-	<select name="critere2" id="">
-			<option value="tous">Tous</option>
-		<?php while($oT = $optionTest->fetch()) {?>
-			<option  value="<?php echo $oT['test']; ?>"><?php echo $oT['test']; ?></option>
-		<?php } ?>
-	</select>
+			<table>
+				<?php while($r = $req->fetch()) { ?>
+				<tr>
+					<td><?php echo $r['metier']; ?></td>
+					<td><?php echo $r['domaine']; ?></td>
+					<td><?php echo $r['test']; ?></td>
+					<td><?php echo $r['description']; ?></td>
+				</tr>
+				<?php } ?>
+			</table>
 
-	<input type="submit" value="Rechercher">
+			<?php } ?>
 
-</form>
+			<?php 
+			if(empty($r) && empty($q)){
+				echo 'Aucun résultat !';
+			}
+			?>	
 
-
-<?php if($req->rowCount() > 0 ) { ?>
-
-<table>
-	<?php while($r = $req->fetch()) { ?>
-	<tr>
-		<td><?php echo $r['metier']; ?></td>
-		<td><?php echo $r['domaine']; ?></td>
-		<td><?php echo $r['test']; ?></td>
-		<td><?php echo $r['description']; ?></td>
-	</tr>
-	<?php } ?>
-</table>
-
-<?php } ?>
-
-<?php 
-if(empty($r) && empty($q)){
-	echo 'Aucun résultat !';
-}
-?>
-</table>
-
+		</div>
 	</div>
 	
 <?php
 
 	include('../includes/footerPlateforme.php');
+	
+	} else {
+		header('Location: connexion.php');
 	}
 ?>
