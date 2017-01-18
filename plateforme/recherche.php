@@ -61,7 +61,7 @@ include('../includes/headerPlateforme.php');
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="content-container">
-			<h2>Résultat fiches métiers</h2>
+			<h2>Résultats <?php echo $req->rowCount(); ?> fiches métiers</h2>
 			<span class="titre-deco"></span>
 
 			<!-- Champ de recherche -->
@@ -92,7 +92,9 @@ include('../includes/headerPlateforme.php');
 			<?php if($req->rowCount() > 0 ) { ?>
 
 			<table>
-				<?php while($r = $req->fetch()) { ?>
+				<?php while($r = $req->fetch()) { 
+
+					?>
 				<tr>
 					<td><?php echo $r['metier']; ?></td>
 					<td><?php echo $r['domaine']; ?></td>
