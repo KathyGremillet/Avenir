@@ -523,9 +523,20 @@ h2{
 		width: 100px;
 		margin: -.5em 0 1em;
 	}
+	input[type="submit"]{
+		padding: .8em 1.5em;
+		width: auto;
+	}
 	input[type="search"]{
 		background-color: $primary-color;
 		box-sizing: border-box;
+		margin-right: .5em;
+		width: 600px;
+	}
+	select{
+		border: 0;
+		margin-right: .5em;
+		padding: .8em 1em;
 	}
 }
 
