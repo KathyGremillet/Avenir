@@ -115,7 +115,8 @@ include('../includes/headerPlateforme.php');
 						<tr>
 							<td>Métier</td>
 							<td>Domaine</td>
-							<td>Description</td>
+							<td>Salaire minimum</td>
+							<td>Niveau minimum</td>
 						</tr>
 					</thead>
 
