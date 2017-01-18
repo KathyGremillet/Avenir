@@ -25,9 +25,6 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 }else{
 	if(isset($_POST['critere1']) || isset($_POST['critere2'])) {
 		$sqlConditions = "";
-		/*if($_POST['critere1'] != 'tous') {
-			var_dump($_POST['critere1']); die();
-		}*/
 		if (isset($_POST['critere1']) && !empty($_POST['critere1']) && $_POST['critere1'] != 'tous'){
 			$sqlConditions .= " and domaine =\"". $_POST['critere1'] ."\"";
 		}
@@ -54,9 +51,6 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 	<title>Fiche métiers</title>
 </head>
 <body>
-<?php
-print_r($_POST);
-?>
 
 
 <!-- Début recherche -->
@@ -103,6 +97,11 @@ print_r($_POST);
 
 <?php } ?>
 
+<?php 
+if(empty($r) && empty($q)){
+	echo 'Aucun résultat !';
+}
+?>
 </table>
 	
 </body>
