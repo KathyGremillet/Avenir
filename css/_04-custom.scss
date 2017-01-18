@@ -286,8 +286,29 @@ a.btn-retour{
 		color: $primary-color;
 	}
 }
+a.btn-favoris{
+	background-color: initial;
+	border: 3px solid $primary-color;
+	color: $primary-color;
+	font-size: 1em;
+	margin: 0;
+	padding: .6em 2em;
+	text-transform: none;
+
+	&:hover{
+		background-color: $primary-color;
+		color: $tertiary-color;
+	}
+}
 h2{
 	text-transform: uppercase;
+}
+.titre-deco{
+	background-color: $tertiary-color;
+	display: block;
+	height: 6px;
+	width: 100px;
+	margin: -.5em 0 1em;
 }
 .container-content{
 	margin: 0 auto;
@@ -408,6 +429,50 @@ h2{
 	}
 }
 
+/*** ARTICLES ***/
+.articles{
+	.content-container > div:first-child{
+		text-align: right;
+	}
+	.article{
+		background-color: $primary-color;
+		border-radius: 5px;
+		margin-top: 1.5em;
+		overflow: hidden;
+	}
+	.header-article{
+		background-size: cover !important;
+		color: $primary-color;
+		padding: 2.2em 2.8em;
+		min-height: 350px;
+
+		&.top10{
+			background: url('../images/jobfutur.png') center center no-repeat;
+		}
+		&.doriann{
+			background: url('../images/portrait.png') center center no-repeat;
+		}
+		h2{
+			font-size: 2.2em;
+			margin-top: 2.5em;
+		}
+		p{
+			font-size: 1.2em;
+		}
+	}		
+	.content-article{
+		padding: 2em 2.8em 5em;
+	}
+	.auteur-date{
+		color: $tertiary-color;
+		font-style: italic;
+		font-weight: bold;
+	}
+	h3{
+		margin-top: 2.5em;
+	}
+}
+
 /*** PROFIL ***/
 .profil{
 
@@ -513,16 +578,39 @@ h2{
 		background-color: $tertiary-color;
 	}
 }
+/*** EDITION PROFIL ***/
+.edit-profil{
+	.infos{
+		background-color: $primary-color;
+		border-radius: 4px;
+		margin: 1.5em auto 0;
+		padding: 1em 2em;
+		width: 920px;
+		max-width: 98%;
+	}
+	.retour-profil{
+		text-align: right;
+	}
+	label{
+		display: inline-block;
+		vertical-align: middle;
+		width: 250px;
+	}
+	input{
+		width: 600px;
+		max-width: 100%;
+	}
+	input[type="submit"]{
+		width: auto;
+		padding: .8em 1.5em;
+		float: right;
+	}
+}
+
 
 /*** RECHERCHE ***/
 .recherche{
-	.titre-deco{
-		background-color: $tertiary-color;
-		display: block;
-		height: 6px;
-		width: 100px;
-		margin: -.5em 0 1em;
-	}
+	
 	input[type="submit"]{
 		padding: .8em 1.5em;
 		width: auto;
@@ -551,13 +639,13 @@ h2{
 			padding: 1em .6em;
 
 			&:first-child{
-				width: 70%;
+				width: 50%;
 			}
 			&:nth-child(2){
 				width: 10%;
 			}
 			&:last-child{
-				width: 20%;
+				width: 40%;
 			}
 		}
 		thead{
@@ -596,21 +684,7 @@ h2{
 		p{
 			font-size: 1.2em;
 		}
-	}
-	a.btn-favoris{
-		background-color: initial;
-		border: 3px solid $primary-color;
-		color: $primary-color;
-		font-size: 1em;
-		margin: 0;
-		padding: .6em 2em;
-		text-transform: none;
-
-		&:hover{
-			background-color: $primary-color;
-			color: $tertiary-color;
-		}
-	}	
+	}		
 	.content-fiche{
 		padding: 2em 2.8em;
 	}
