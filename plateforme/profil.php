@@ -23,7 +23,7 @@
 		
 		<?php include('../includes/secondNav.php'); ?>
 
-		<div class="profil">
+		<div class="profil content-container">
 			<div class="presentation row">
 				<div class=" col-lg-8">
 					<div class="blocs">

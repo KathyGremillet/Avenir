@@ -14,7 +14,7 @@
     include('../includes/headerPlateforme.php');
 ?>
 
-	<div class="fiche-ecole" id="main-content">
+	<div class="fiche-ecole content-container" id="main-content">
 
 		<?php include('../includes/secondNav.php'); ?>
 
