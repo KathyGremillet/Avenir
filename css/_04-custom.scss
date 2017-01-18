@@ -240,7 +240,7 @@ input{
 input[type="submit"]{
 	background-color: $tertiary-color;
 	border: none;
-	border-radius: 25px;
+	border-radius: 4px;
 	color: $primary-color;
 	font-weight: bold;
     margin: 1.5em 0 .5em;
@@ -336,6 +336,9 @@ h2{
    		&:hover{
    			color: $tertiary-color;
    		}
+	}
+	input[type="submit"]{
+		border-radius: 25px;
 	}
 }
 
@@ -512,6 +515,19 @@ h2{
 }
 
 /*** RECHERCHE ***/
+.recherche{
+	.titre-deco{
+		background-color: $tertiary-color;
+		display: block;
+		height: 5px;
+		width: 100px;
+		margin: -.5em 0 1em;
+	}
+	input[type="search"]{
+		background-color: $primary-color;
+		box-sizing: border-box;
+	}
+}
 
 
 /*** FICHES ***/
