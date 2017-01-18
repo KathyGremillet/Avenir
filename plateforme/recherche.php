@@ -2,17 +2,23 @@
 
 include('../config/settings.php');
 
-$req = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id DESC');
+$req = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id ASC');
 $req->execute();
 
-$titre = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id DESC');
+$titre = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id ASC');
 $titre->execute();
 
 $optionDomaine = $bdd->prepare('SELECT DISTINCT domaine FROM fiche_metier');
 $optionDomaine->execute();
 
-$optionTest = $bdd->prepare('SELECT DISTINCT test FROM fiche_metier');
-$optionTest->execute();
+/*$optionTest = $bdd->prepare('SELECT DISTINCT test FROM fiche_metier');
+$optionTest->execute();*/
+
+$optionSalaire = $bdd->prepare('SELECT DISTINCT salaire FROM fiche_metier');
+$optionSalaire->execute();
+
+$optionEtude = $bdd->prepare('SELECT DISTINCT niveauMinimum FROM fiche_metier');
+$optionEtude->execute();
 
 
 // Début recherche
@@ -27,14 +33,19 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 	}
 }
 
-if(isset($_POST['critere1']) || isset($_POST['critere2'])) {
+if(isset($_POST['critere1']) || isset($_POST['critere2']) || isset($_POST['critere3'])) {
 	$sqlConditions = "";
 	if (isset($_POST['critere1']) && !empty($_POST['critere1']) && $_POST['critere1'] != 'tous'){
 		$sqlConditions .= " and domaine =\"". $_POST['critere1'] ."\"";
+
 	}
 	if (isset($_POST['critere2']) && !empty($_POST['critere2']) && $_POST['critere2'] != 'tous'){
-		$sqlConditions .= " and test =\"". $_POST['critere2'] ."\"";
+		$sqlConditions .= " and salaire =\"". $_POST['critere2'] ."\"";
 	}
+	if (isset($_POST['critere3']) && !empty($_POST['critere3']) && $_POST['critere3'] != 'tous'){
+		$sqlConditions .= " and niveauMinimum =\"". $_POST['critere3'] ."\"";
+	}
+
 	$sqlQuery = "SELECT * FROM fiche_metier WHERE 1 ". $sqlConditions ." ORDER BY id DESC";
 	$req = $bdd->prepare($sqlQuery);
 	$req->execute();
@@ -81,25 +92,33 @@ include('../includes/headerPlateforme.php');
 
 				<select name="critere2" id="">
 						<option value="tous">Tous</option>
-					<?php while($oT = $optionTest->fetch()) {?>
-						<option  value="<?php echo $oT['test']; ?>"><?php echo $oT['test']; ?></option>
+					<?php while($oS = $optionSalaire->fetch()) {?>
+						<option  value="<?php echo $oS['salaire']; ?>"><?php echo $oS['salaire']; ?> €</option>
+					<?php } ?>
+				</select>
+
+				<select name="critere3" id="">
+						<option value="tous">Tous</option>
+					<?php while($oE = $optionEtude->fetch()) {?>
+						<option  value="<?php echo $oE['niveauMinimum']; ?>"><?php echo $oE['niveauMinimum']; ?></option>
 					<?php } ?>
 				</select>
 
 				<input type="submit" value="Rechercher">
 			</form>
 
-			<?php if($req->rowCount() > 0 ) { ?>
+			<?php if($req->rowCount() > 0 ) { 
+				?>
 
 			<table>
 				<?php while($r = $req->fetch()) { 
 
-					?>
+						?>
 				<tr>
 					<td><?php echo $r['metier']; ?></td>
 					<td><?php echo $r['domaine']; ?></td>
-					<td><?php echo $r['test']; ?></td>
-					<td><?php echo $r['description']; ?></td>
+					<td><?php echo $r['salaire']; ?> €</td>
+					<td><?php echo $r['niveauMinimum']; ?></td>
 				</tr>
 				<?php } ?>
 			</table>
