@@ -43,9 +43,9 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 }
 // Fin recherche
 
-if(isset($_GET['id']) AND $_GET['id'] > 0){
+if(isset($_SESSION['id']) AND $_SESSION['id'] > 0){
 
-	$getID = intval($_GET['id']);
+	$getID = intval($_SESSION['id']);
 	$reqUser = $bdd->prepare("SELECT * FROM user, profil WHERE id = ?");
 	$reqUser->execute(array($getID));
 	$userInfo = $reqUser->fetch();
