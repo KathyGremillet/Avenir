@@ -18,7 +18,7 @@
 
 		<?php include('../includes/secondNav.php'); ?>
 
-		<div class="fiches">
+		<div class="fiches content-container">
 			<div>
 				<a href="#" title="Retour à la recherche" class="btn btn-retour">Retour à la recherche</a>
 				<a href="#" title="Etre accompagné" class="btn btn-secondaire">Je veux être accompagné</a>

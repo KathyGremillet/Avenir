@@ -173,6 +173,11 @@ nav{
 	width: 100%;
 	padding-left: 250px;
 }
+.content-container{
+	width: 90%;
+	margin: 0 auto;
+	padding: 1.5em 0 2em;
+}
 p{
 	line-height: 1.5;
 }
@@ -402,9 +407,6 @@ h2{
 
 /*** PROFIL ***/
 .profil{
-	margin: 0 auto;
-    padding: 1.5em 0 2em;
-	width: 90%;
 
 	h2{
 		text-transform: none;
@@ -509,11 +511,11 @@ h2{
 	}
 }
 
+/*** RECHERCHE ***/
+
+
 /*** FICHES ***/
 .fiches{
-	margin: 0 auto;
-    padding: 1.5em 0 2em;
-	width: 90%;
 
 	> div:first-child{
 		text-align: right;

@@ -40,10 +40,10 @@
 			<nav class="menu-list">
 			  <ul class="clearfix">
 			  	<li<?php if ($page == 'Accueil') {echo ' class="active"';} ?> ><a href="accueil.php?id=<?php echo $_SESSION['id']?>">Accueil</a></li>
-				<li<?php if ($page == 'Mes tests') {echo ' class="active"';} ?> ><a href="mes-tests.php?id=<?php echo $_SESSION['id']?>">Mes tests</a></li>
+				<li<?php if ($page == 'Mes tests') {echo ' class="active"';} ?> ><a href="#">Mes tests</a></li>
 				<li<?php if ($page == 'M\'orienter') {echo ' class="active"';} ?> ><a href="recherche.php?id=<?php echo $_SESSION['id']?>"><span class="premium-tag">Premium</span> M'orienter</a></li>
-				<li<?php if ($page == 'Etre accompagne') {echo ' class="active"';} ?> ><a href="etre-accompagner.php?id=<?php echo $_SESSION['id']?>"><span class="premium-tag">Premium</span> Être accompagné</a></li>	
-				<li<?php if ($page == 'Favoris') {echo ' class="active"';} ?> ><a href="favoris.php?id=<?php echo $_SESSION['id']?>">Favoris</a></li>
+				<li<?php if ($page == 'Etre accompagne') {echo ' class="active"';} ?> ><a href="#"><span class="premium-tag">Premium</span> Être accompagné</a></li>	
+				<li<?php if ($page == 'Favoris') {echo ' class="active"';} ?> ><a href="#">Favoris</a></li>
 			  </ul>
 			</nav>			
 		</div>		

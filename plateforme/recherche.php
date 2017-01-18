@@ -61,8 +61,8 @@ include('../includes/headerPlateforme.php');
 	
 		<?php include('../includes/secondNav.php'); ?>
 
-		<div class="">
-			<h2><?php $t = $titre->fetch(); echo count($t);?> fiches métiers</h2>
+		<div class="content-container">
+			<h2><?php $t = $titre->fetch(); echo count($r);?> fiches métiers</h2>
 			<span class="titre-deco"></span>
 
 			<!-- Champ de recherche -->
@@ -112,7 +112,7 @@ include('../includes/headerPlateforme.php');
 <?php
 
 	include('../includes/footerPlateforme.php');
-	
+
 	} else {
 		header('Location: connexion.php');
 	}
