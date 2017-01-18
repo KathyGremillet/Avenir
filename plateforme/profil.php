@@ -13,7 +13,7 @@
 		$cheminLM = "../membres/lettreMotivation/".$userInfo['lm'];
 
 
-	$page = "M'orienter";
+	$page = "Profil";
     $description = "Avenir - La plateforme de la réoriention facile - Page de recherche";
 
     include('../includes/headerPlateforme.php');
@@ -131,6 +131,31 @@
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
 			</div>
+			<!-- <div class="row">
+				<div class="col-lg-12">
+					<h3><span class="typcn typcn-briefcase"> Expérience professionnelle</h3>
+					<div class="blocs">
+						<table>
+							<thead>
+								<tr>
+									<td>Intitulé</td>
+									<td>&Eacute;tat</td>
+									<td>Résultat</td>
+									<td>Date</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Test de personnalité</td>
+									<td>60%</td>
+									<td>Mordu des Arts</td>
+									<td>15/01/2017</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>				
+			</div> -->
 		</div>	
 
 	</div>

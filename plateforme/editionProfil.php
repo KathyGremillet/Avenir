@@ -225,67 +225,89 @@
 ?>
 
 
-<div class="" id="main-content">
+<div class="edit-profil" id="main-content">
 	<?php include('../includes/secondNav.php'); ?>
 
-	<h2>Edition de mon profil</h2>
+	<div class="content-container">
+		<div class="row">
+			<div class="col-lg-8">
+				<h2>&Eacute;dition de mon profil</h2>
+				<span class="titre-deco"></span>
+			</div>
+			<div class="col-lg-4 retour-profil">
+				<a href='profil.php?id=<?php echo $_SESSION["id"]; ?>' class="btn btn-retour">Retourner sur mon profil</a>
+			</div>
+		</div>		
 
-	<div align="left">
-		<form method="POST" action="editionProfil.php" enctype="multipart/form-data">
-			<label for="newNom">Votre nom : </label>
-			<input type="text" id="newNom" name="newNom" value="<?php echo $userInfo['nom']; ?>"><br>
-			
-			<label for="newPrenom">Votre prénom : </label>
-			<input type="text" id="newPrenom" name="newPrenom" value="<?php echo $userInfo['prenom']; ?>"><br>
+		<div class="infos">
+			<form method="POST" action="editionProfil.php" enctype="multipart/form-data" class="clearfix">
+				<div>
+					<label for="avatar" class="">Avatar</label>
+					<input type="file" id="avatar" name="avatar" class="">
+				</div>
+				<div>
+					<label for="newNom">Votre nom : </label>
+					<input type="text" id="newNom" name="newNom" value="<?php echo $userInfo['nom']; ?>">
+				</div>
+				<div>
+					<label for="newPrenom">Votre prénom : </label>
+					<input type="text" id="newPrenom" name="newPrenom" value="<?php echo $userInfo['prenom']; ?>">
+				</div>
+				<div>
+					<label for="newMail">Votre email : </label>
+					<input type="email" id="newMail" name="newMail" value="<?php echo $userInfo['mail']; ?>">
+				</div>
+				<div>				
+					<label for="newPassword">Votre mot de passe : </label>
+					<input type="password" id="newPassword" name="newPassword">
+				</div>
+				<div>
+					<label for="newPassword">Confirmez votre mot de passe</label>
+					<input type="password" id="newPasswordConfirm" name="newPasswordConfirm" placeholder="Confirmez votre mot de passe">
+				</div>
+				<div>
+					<label for="newAge">Votre âge</label>
+					<input type="text" placeholder="Votre âge" name="newAge" id="newAge" value="<?php echo $userInfo['age']; ?>">
+				</div>
+				<div>
+					<label for="newAdresse">Votre adresse</label>
+					<input type="text" placeholder="Votre adresse" name="newAdresse" id="newAdresse" value="<?php echo $userInfo['adresse']; ?>">
+				</div>
+				<div>
+					<label for="newAdresse2">Votre adresse (suite)</label>
+					<input type="text" placeholder="Votre adresse (suite)" name="newAdresse2" id="newAdresse2" value="<?php echo $userInfo['adresse2']; ?>">
+				</div>
+				<div>
+					<label for="newCP">Votre code postal</label>
+					<input type="text" placeholder="Votre code postal" name="newCP" id="newCP" value="<?php echo $userInfo['cp']; ?>">
+				</div>
+				<div>
+					<label for="newVille">Votre ville</label>
+					<input type="text" placeholder="Votre ville" name="newVille" id="newVille" value="<?php echo $userInfo['ville']; ?>">
+				</div>
+				<div>
+					<label for="cv">Votre CV</label>
+					<input type="file" id="cv" name="cv">
+				</div>
+				<div>
+					<label for="lm">Lettre de Motivation</label>
+					<input type="file" id="lm" name="lm">
+				</div>
+				<input type="submit" value="Enregistrer les modifications">
+				
+			</form>
 
-			<label for="newMail">Votre email : </label>
-			<input type="email" id="newMail" name="newMail" value="<?php echo $userInfo['mail']; ?>"><br>
-			
-			<label for="newPassword">Votre mot de passe : </label>
-			<input type="password" id="newPassword" name="newPassword"><br>
-			
-			<label for="newPassword">Confirmez votre mot de passe</label>
-			<input type="password" id="newPasswordConfirm" name="newPasswordConfirm" placeholder="Confirmez votre mot de passe"><br>
+			<?php 
+				if(isset($msg)) { 
+					echo $msg; 
+				}
+			?>	
 
-			<label for="newAge">Votre âge</label>
-			<input type="text" placeholder="Votre âge" name="newAge" id="newAge" value="<?php echo $userInfo['age']; ?>"><br>
+		</div>		
 
-			<label for="newAdresse">Votre adresse</label>
-			<input type="text" placeholder="Votre adresse" name="newAdresse" id="newAdresse" value="<?php echo $userInfo['adresse']; ?>"><br>
-
-			<label for="newAdresse2">Votre adresse (suite)</label>
-			<input type="text" placeholder="Votre adresse (suite)" name="newAdresse2" id="newAdresse2" value="<?php echo $userInfo['adresse2']; ?>"><br>
-
-			<label for="newCP">Votre code postal</label>
-			<input type="text" placeholder="Votre code postal" name="newCP" id="newCP" value="<?php echo $userInfo['cp']; ?>"><br>
-
-			<label for="newVille">Votre ville</label>
-			<input type="text" placeholder="Votre ville" name="newVille" id="newVille" value="<?php echo $userInfo['ville']; ?>"><br>
-
-			<label for="avatar">Avatar</label>
-			<input type="file" id="avatar" name="avatar"><br>
-
-			<label for="cv">Votre CV</label>
-			<input type="file" id="cv" name="cv"><br>
-
-			<label for="lm">Lettre de Motivation</label>
-			<input type="file" id="lm" name="lm"><br>
-
-			<input type="submit" value="Modifier mon compte">
-			
-		</form>
-
-		<?php 
-			if(isset($msg)) { 
-				echo $msg; 
-			}
-		?>	
-
-	</div>
+	</div>	
 
 </div>
-
-<a href='profil.php?id=<?php echo $_SESSION["id"]; ?>'>Retourner sur mon profil</a>
 
 
 <?php

@@ -27,7 +27,7 @@
 			</div>
 			<div class="news row container-content">
 				<div class="col-lg-4 bloc-news">
-					<a href="#" title="Top 10 des jobs du futur">
+					<a href="top10-jobs.php" title="Top 10 des jobs du futur">
 						<div class="">
 							<h2>Top 10</h2>
 							<p>Jobs du futur</p>
@@ -35,7 +35,7 @@
 					</a>
 				</div>
 				<div class="col-lg-4 bloc-news">
-					<a href="#" title="Portrait de Doriann">
+					<a href="doriann.php" title="Portrait de Doriann">
 						<div class="">
 							<h2>Doriann</h2>
 							<p>Découvre son parcours</p>
@@ -43,10 +43,10 @@
 					</a>
 				</div>
 				<div class="col-lg-4 bloc-news">
-					<a href="#" title="Top 5 des écoles de commerce gratuites">
+					<a href="top5-ecoles-commerce.php" title="Top 5 des écoles de commerce">
 						<div class="">
 							<h2>Top 5</h2>
-							<p>écoles de commerce gratuites</p>
+							<p>&Eacute;coles de commerce</p>
 						</div>
 					</a>
 				</div>
