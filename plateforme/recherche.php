@@ -5,6 +5,9 @@ include('../config/settings.php');
 $req = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id DESC');
 $req->execute();
 
+$titre = $bdd->prepare('SELECT * FROM fiche_metier ORDER BY id DESC');
+$titre->execute();
+
 $optionDomaine = $bdd->prepare('SELECT DISTINCT domaine FROM fiche_metier');
 $optionDomaine->execute();
 
@@ -32,7 +35,6 @@ if(isset($_GET['q']) AND !empty($_GET['q'])) {
 			$sqlConditions .= " and test =\"". $_POST['critere2'] ."\"";
 		}
 		$sqlQuery = "SELECT * FROM fiche_metier WHERE 1 ". $sqlConditions ." ORDER BY id DESC";
-		echo $sqlQuery;
 		$req = $bdd->prepare($sqlQuery);
 		$req->execute();
 	}
@@ -60,7 +62,7 @@ include('../includes/headerPlateforme.php');
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="content-container">
-			<h2><?php $r = $req->fetch(); echo count($r);?> fiches métiers</h2>
+			<h2><?php $t = $titre->fetch(); echo count($r);?> fiches métiers</h2>
 			<span class="titre-deco"></span>
 
 			<!-- Champ de recherche -->
@@ -102,12 +104,7 @@ include('../includes/headerPlateforme.php');
 			</table>
 
 			<?php } ?>
-
-			<?php 
-			if(empty($r) && empty($q)){
-				echo 'Aucun résultat !';
-			}
-			?>	
+	
 
 		</div>
 	</div>
