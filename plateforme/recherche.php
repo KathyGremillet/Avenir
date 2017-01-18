@@ -72,7 +72,7 @@ include('../includes/headerPlateforme.php');
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="content-container">
-			<h2>Résultats <?php echo $req->rowCount(); ?> fiches métiers</h2>
+			<h2><?php echo $req->rowCount(); ?> fiches métiers</h2>
 			<span class="titre-deco"></span>
 
 			<!-- Champ de recherche -->
@@ -107,23 +107,34 @@ include('../includes/headerPlateforme.php');
 				<input type="submit" value="Rechercher">
 			</form>
 
-			<?php if($req->rowCount() > 0 ) { 
-				?>
+			<div class="results">
+				<?php if($req->rowCount() > 0 ) { ?>
 
-			<table>
-				<?php while($r = $req->fetch()) { 
+				<table>
+					<thead>
+						<tr>
+							<td>Métier</td>
+							<td>Domaine</td>
+							<td>Description</td>
+						</tr>
+					</thead>
 
-						?>
-				<tr>
-					<td><?php echo $r['metier']; ?></td>
-					<td><?php echo $r['domaine']; ?></td>
-					<td><?php echo $r['salaire']; ?> €</td>
-					<td><?php echo $r['niveauMinimum']; ?></td>
-				</tr>
+					<tbody>
+						<?php while($r = $req->fetch()) { 
+
+							?>
+						<tr>
+							<td><?php echo $r['metier']; ?></td>
+							<td><?php echo $r['domaine']; ?></td>
+							<td><?php echo $r['salaire']; ?></td>
+							<td><?php echo $r['niveauMinimum']; ?></td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+
 				<?php } ?>
-			</table>
-
-			<?php } ?>
+			</div>
 	
 
 		</div>
