@@ -475,6 +475,27 @@ h2{
 		margin-top: 2.5em;
 	}
 }
+/*** EVENT ***/
+.event{
+	.header-article{
+		background: url('../images/header_event.png') center center no-repeat;
+		padding-top: 8em;
+	}
+	h3{
+		color: $tertiary-color;
+		font-size: 1.6em;
+		margin-top: 1em;
+	}
+	.lieu{
+		color: darken($primary-color, 40);
+		font-size: 1.4em;
+		font-weight: bold;
+		margin-bottom: 2em;
+	}
+	a.btn{
+		margin-top: 4em;
+	}
+}
 
 /*** PROFIL ***/
 .profil{

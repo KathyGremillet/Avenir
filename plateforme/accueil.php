@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div class="col-lg-4 bloc-news">
-					<a href="#" title="Les événements">
+					<a href="event.php" title="Les événements">
 						<div class="">
 							<img src="../images/icon-event.png">
 							<h2>événements</h2>
