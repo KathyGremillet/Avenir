@@ -107,7 +107,21 @@
 							<?php }
 							if(!empty($etu[6])) { ?>
 								<p><a href="#"><?php echo $etu[6]; ?></a></p>
-							<?php } ?>
+							<?php } 
+							if(!empty($etu[7])) { ?>
+								<p><a href="#"><?php echo $etu[7]; ?></a></p>
+							<?php }
+							if(!empty($etu[8])) { ?>
+								<p><a href="#"><?php echo $etu[8]; ?></a></p>
+							<?php }
+							if(!empty($etu[9])) { ?>
+								<p><a href="#"><?php echo $etu[9]; ?></a></p>
+							<?php }
+							if(!empty($etu[10])) { ?>
+								<p><a href="#"><?php echo $etu[10]; ?></a></p>
+							<?php }
+
+							?>
 			
 						</div>
 					</div>

@@ -20,7 +20,6 @@ $optionEtude->execute();
 $optionStatut = $bdd->prepare('SELECT DISTINCT statut FROM fiche_metier');
 $optionStatut->execute();
 
-
 // Début recherche
 if(isset($_GET['q']) AND !empty($_GET['q'])) {
 	$q = htmlspecialchars($_GET['q']);
