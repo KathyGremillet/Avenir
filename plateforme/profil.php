@@ -46,14 +46,14 @@
 										<span class="typcn typcn-location"></span> <?php if(isset($userInfo['ville'])) { echo $userInfo['ville']; } ?>
 									</div>
 									<div class="col-lg-5">
-										<span class="typcn typcn-device-phone"></span> 06 00 00 00 00
+										<span class="typcn typcn-device-phone"></span> <?php if(isset($userInfo['tel'])) { echo $userInfo['tel']; } ?>
 									</div>
 									<div class="col-lg-4">
 										<span class="typcn typcn-mail"></span> <?php echo $userInfo['mail']; ?>
 									</div>
 								</div>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									<?php echo $userInfo['description']; ?>
 								</p>						
 							</div>
 						</div>

@@ -86,7 +86,23 @@
 			header('Location: profil.php?id=' .$_SESSION["id"]);		
 
 		}
-			
+
+		if(isset($_POST['newTel']) AND !empty($_POST['newTel'])  AND $_POST['newTel'] != $userInfo['tel']){
+
+			$updateVille = htmlspecialchars($_POST['newTel']);
+			$insertVille = $bdd->prepare("UPDATE user SET tel = ? WHERE id = ?");
+			$insertVille->execute(array($updateVille, $_SESSION['id']));
+			header('Location: profil.php?id=' .$_SESSION["id"]);		
+
+		}
+		if(isset($_POST['newDesc']) AND !empty($_POST['newDesc'])  AND $_POST['newDesc'] != $userInfo['description']){
+
+			$updateVille = htmlspecialchars($_POST['newDesc']);
+			$insertVille = $bdd->prepare("UPDATE user SET description = ? WHERE id = ?");
+			$insertVille->execute(array($updateVille, $_SESSION['id']));
+			header('Location: profil.php?id=' .$_SESSION["id"]);		
+
+		}	
 
 
 		if(isset($_POST['newPassword']) AND !empty($_POST['newPassword']) AND isset($_POST['newPasswordConfirm']) AND !empty($_POST['newPasswordConfirm'])){
@@ -284,6 +300,14 @@
 				<div>
 					<label for="newVille">Votre ville</label>
 					<input type="text" placeholder="Votre ville" name="newVille" id="newVille" value="<?php echo $userInfo['ville']; ?>">
+				</div>
+				<div>
+					<label for="newTel">Votre numéro de téléphone</label>
+					<input type="text" placeholder="Votre numéro de téléphone" name="newTel" id="newTel" value="<?php echo $userInfo['tel']; ?>">
+				</div>
+				<div>
+					<label for="newTel">Votre description</label>
+					<textarea name="newDesc" id="newDesc" cols="30" rows="10"><?php echo $userInfo['description']; ?></textarea>
 				</div>
 				<div>
 					<label for="cv">Votre CV</label>
