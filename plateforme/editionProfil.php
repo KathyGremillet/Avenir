@@ -124,6 +124,60 @@
 		
 		}
 
+		if(isset($_POST['newCI1']) || isset($_POST['newCI2']) || isset($_POST['newCI3']) || isset($_POST['newCI4']) || isset($_POST['newCI5'])) {
+			$centreInteret = "";
+			if(isset($_POST['newCI1']) && !empty($_POST['newCI1'])) {
+				$centreInteret .= "".$_POST['newCI1'].";";
+			}
+			if(isset($_POST['newCI2']) && !empty($_POST['newCI2'])) {
+				$centreInteret .= "".$_POST['newCI2'].";";
+			}
+			if(isset($_POST['newCI3']) && !empty($_POST['newCI3'])) {
+				$centreInteret .= "".$_POST['newCI3'].";";
+			}
+			if(isset($_POST['newCI4']) && !empty($_POST['newCI4'])) {
+				$centreInteret .= "".$_POST['newCI4'].";";
+			}
+			if(isset($_POST['newCI5']) && !empty($_POST['newCI5'])) {
+				$centreInteret .= "".$_POST['newCI5'].";";
+			}
+
+			$insertCI = $bdd->prepare("UPDATE profil SET centreInteret = ? WHERE idUser = ?");
+			$insertCI->execute(array($centreInteret, $_SESSION['id']));
+		}
+
+		$exCentreInteret = $bdd->prepare('SELECT centreInteret FROM profil WHERE idUser = ?');
+		$exCentreInteret->execute(array($_SESSION['id']));
+		$CeIn = $exCentreInteret->fetch();
+		$CI = explode(';',$CeIn['centreInteret']);
+
+		if(isset($_POST['newC1']) || isset($_POST['newC2']) || isset($_POST['newC3']) || isset($_POST['newC4']) || isset($_POST['newC5'])) {
+			$competences = "";
+			if(isset($_POST['newC1']) && !empty($_POST['newC1'])) {
+				$competences .= "".$_POST['newC1'].";";
+			}
+			if(isset($_POST['newC2']) && !empty($_POST['newC2'])) {
+				$competences .= "".$_POST['newC2'].";";
+			}
+			if(isset($_POST['newC3']) && !empty($_POST['newC3'])) {
+				$competences .= "".$_POST['newC3'].";";
+			}
+			if(isset($_POST['newC4']) && !empty($_POST['newC4'])) {
+				$competences .= "".$_POST['newC4'].";";
+			}
+			if(isset($_POST['newC5']) && !empty($_POST['newC5'])) {
+				$competences .= "".$_POST['newC5'].";";
+			}
+
+			$insertCI = $bdd->prepare("UPDATE profil SET competences = ? WHERE idUser = ?");
+			$insertCI->execute(array($competences, $_SESSION['id']));
+		}
+
+		$exCompetences = $bdd->prepare('SELECT competences FROM profil WHERE idUser = ?');
+		$exCompetences->execute(array($_SESSION['id']));
+		$Comp = $exCompetences->fetch();
+		$C = explode(';',$Comp['competences']);
+
 		if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
 
 			$tailleMax = 2097152;
@@ -304,10 +358,26 @@
 				<div>
 					<label for="newTel">Votre numéro de téléphone</label>
 					<input type="text" placeholder="Votre numéro de téléphone" name="newTel" id="newTel" value="<?php echo $userInfo['tel']; ?>">
-				</div>
+				</div>	
 				<div>
 					<label for="newTel">Votre description</label>
 					<textarea name="newDesc" id="newDesc" cols="30" rows="10"><?php echo $userInfo['description']; ?></textarea>
+				</div>
+				<div>
+					<label for="competences">Vos compétences</label>
+					<input type="text" name="newC1" id="newC1" value="<?php if(!empty($C[0])) { echo $C[0]; } ?>">
+					<input type="text" name="newC2" id="newC2" value="<?php if(!empty($C[1])) { echo $C[1]; } ?>">
+					<input type="text" name="newC3" id="newC3" value="<?php if(!empty($C[2])) { echo $C[2]; } ?>">
+					<input type="text" name="newC4" id="newC4" value="<?php if(!empty($C[3])) { echo $C[3]; } ?>">
+					<input type="text" name="newC5" id="newC5" value="<?php if(!empty($C[5])) { echo $C[4]; } ?>">
+				</div>
+				<div>
+					<label for="centreInteret">Vos centres d'intérêts</label>
+					<input type="text" name="newCI1" id="newCI1" value="<?php if(!empty($CI[0])) { echo $CI[0]; } ?>">
+					<input type="text" name="newCI2" id="newCI2" value="<?php if(!empty($CI[1])) { echo $CI[1]; } ?>">
+					<input type="text" name="newCI3" id="newCI3" value="<?php if(!empty($CI[2])) { echo $CI[2]; } ?>">
+					<input type="text" name="newCI4" id="newCI4" value="<?php if(!empty($CI[3])) { echo $CI[3]; } ?>">
+					<input type="text" name="newCI5" id="newCI5" value="<?php if(!empty($CI[4])) { echo $CI[4]; } ?>">
 				</div>
 				<div>
 					<label for="cv">Votre CV</label>

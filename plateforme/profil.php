@@ -12,6 +12,16 @@
 		$cheminCV = "../membres/cv/".$userInfo['cv'];
 		$cheminLM = "../membres/lettreMotivation/".$userInfo['lm'];
 
+		$exCentreInteret = $bdd->prepare('SELECT centreInteret FROM profil WHERE idUser = ?');
+		$exCentreInteret->execute(array($_SESSION['id']));
+		$CeIn = $exCentreInteret->fetch();
+		$CI = explode(';',$CeIn['centreInteret']);
+
+		$exCompetences = $bdd->prepare('SELECT competences FROM profil WHERE idUser = ?');
+		$exCompetences->execute(array($_SESSION['id']));
+		$Comp = $exCompetences->fetch();
+		$C = explode(';',$Comp['competences']);
+
 
 	$page = "Profil";
     $description = "Avenir - La plateforme de la réoriention facile - Page de recherche";
@@ -114,19 +124,22 @@
 				<div class="competences col-lg-6">
 					<h3><span class="typcn typcn-puzzle-outline"></span> Compétences</h3>
 					<ul>
-						<li>Sens du contact</li>
-						<li>Résistance au stress</li>
-						<li>Spécialisation et technicité</li>
+						<?php if(!empty($C[0])) { echo '<li>'.$C[0].'</li>'; } ?>
+						<?php if(!empty($C[1])) { echo '<li>'.$C[1].'</li>'; } ?>
+						<?php if(!empty($C[2])) { echo '<li>'.$C[2].'</li>'; } ?>
+						<?php if(!empty($C[3])) { echo '<li>'.$C[3].'</li>'; } ?>
+						<?php if(!empty($C[4])) { echo '<li>'.$C[4].'</li>'; } ?>
 					</ul>
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
 				<div class="ctr-interets col-lg-6">
 					<h3><span class="typcn typcn-heart-outline"></span> Centres d'intérêts</h3>
 					<ul>
-						<li>Running</li>
-						<li>Dessin</li>
-						<li>Partir à l'aventure</li>
-						<li>Manager</li>
+						<?php if(!empty($CI[0])) { echo '<li>'.$CI[0].'</li>'; } ?>
+						<?php if(!empty($CI[1])) { echo '<li>'.$CI[1].'</li>'; } ?>
+						<?php if(!empty($CI[2])) { echo '<li>'.$CI[2].'</li>'; } ?>
+						<?php if(!empty($CI[3])) { echo '<li>'.$CI[3].'</li>'; } ?>
+						<?php if(!empty($CI[4])) { echo '<li>'.$CI[4].'</li>'; } ?>
 					</ul>
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
