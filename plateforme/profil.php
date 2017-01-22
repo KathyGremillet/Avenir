@@ -12,6 +12,11 @@
 		$cheminCV = "../membres/cv/".$userInfo['cv'];
 		$cheminLM = "../membres/lettreMotivation/".$userInfo['lm'];
 
+		$exIntituleExperience = $bdd->prepare('SELECT intituleExperience FROM profil WHERE idUser = ?');
+		$exIntituleExperience->execute(array($_SESSION['id']));
+		$IntiExp = $exIntituleExperience->fetch();
+		$IE = explode(';',$IntiExp['intituleExperience']);
+
 		$exCentreInteret = $bdd->prepare('SELECT centreInteret FROM profil WHERE idUser = ?');
 		$exCentreInteret->execute(array($_SESSION['id']));
 		$CeIn = $exCentreInteret->fetch();
@@ -21,6 +26,36 @@
 		$exCompetences->execute(array($_SESSION['id']));
 		$Comp = $exCompetences->fetch();
 		$C = explode(';',$Comp['competences']);
+
+		$exPoste = $bdd->prepare('SELECT intituleExperience FROM profil WHERE idUser = ?');
+		$exPoste->execute(array($_SESSION['id']));
+		$Pos = $exPoste->fetch();
+		$P = explode(';',$Pos['intituleExperience']);
+
+		$exIntituleEntreprise = $bdd->prepare('SELECT intituleEntreprise FROM profil WHERE idUser = ?');
+		$exIntituleEntreprise->execute(array($_SESSION['id']));
+		$InEn = $exIntituleEntreprise->fetch();
+		$IEn = explode(';',$InEn['intituleEntreprise']);
+
+		$exDescriptionPoste = $bdd->prepare('SELECT descriptionExperience FROM profil WHERE idUser = ?');
+		$exDescriptionPoste->execute(array($_SESSION['id']));
+		$DescPos = $exDescriptionPoste->fetch();
+		$DP = explode(';',$DescPos['descriptionExperience']);
+
+		$exFormation = $bdd->prepare('SELECT intituleFormation FROM profil WHERE idUser = ?');
+		$exFormation->execute(array($_SESSION['id']));
+		$Form = $exFormation->fetch();
+		$F = explode(';',$Form['intituleFormation']);
+
+		$exIntituleEcole = $bdd->prepare('SELECT intituleEcole FROM profil WHERE idUser = ?');
+		$exIntituleEcole->execute(array($_SESSION['id']));
+		$InEc = $exIntituleEcole->fetch();
+		$IE = explode(';',$InEc['intituleEcole']);
+
+		$exDescriptionFormation = $bdd->prepare('SELECT descriptionFormation FROM profil WHERE idUser = ?');
+		$exDescriptionFormation->execute(array($_SESSION['id']));
+		$DescFor = $exDescriptionFormation->fetch();
+		$DF = explode(';',$DescFor['descriptionFormation']);
 
 
 	$page = "Profil";
@@ -91,14 +126,14 @@
 					<h3><span class="typcn typcn-briefcase"> Expérience professionnelle</h3>
 					<div class="blocs">
 						<div>
-							<h4>Poste</h4>
-							<h5>Entreprise</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<?php if(!empty($P[0])) { echo '<h4>'.$P[0].'</h4>'; } ?>
+							<?php if(!empty($IEn[0])) { echo '<h5>'.$IEn[0].'</h5>'; } ?>
+							<?php if(!empty($DP[0])) { echo '<p>'.$DP[0].'</p>'; } ?>
 						</div>
 						<div>
-							<h4>Poste</h4>
-							<h5>Entreprise</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<?php if(!empty($P[1])) { echo '<h4>'.$P[1].'</h4>'; } ?>
+							<?php if(!empty($IEn[1])) { echo '<h5>'.$IEn[1].'</h5>'; } ?>
+							<?php if(!empty($DP[1])) { echo '<p>'.$DP[1].'</p>'; } ?>
 						</div>
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
@@ -107,14 +142,14 @@
 					<h3><span class="typcn typcn-mortar-board"> Cursus scolaire</h3>
 					<div class="blocs">
 						<div>
-							<h4>Formation</h4>
-							<h5>École</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<?php if(!empty($F[0])) { echo '<h4>'.$F[0].'</h4>'; } ?>
+							<?php if(!empty($IE[0])) { echo '<h5>'.$IE[0].'</h5>'; } ?>
+							<?php if(!empty($DF[0])) { echo '<p>'.$DF[0].'</p>'; } ?>
 						</div>
 						<div>
-							<h4>Formation</h4>
-							<h5>École</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<?php if(!empty($F[1])) { echo '<h4>'.$F[1].'</h4>'; } ?>
+							<?php if(!empty($IE[1])) { echo '<h5>'.$IE[1].'</h5>'; } ?>
+							<?php if(!empty($DF[1])) { echo '<p>'.$DF[1].'</p>'; } ?>
 						</div>
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>

@@ -178,6 +178,126 @@
 		$Comp = $exCompetences->fetch();
 		$C = explode(';',$Comp['competences']);
 
+		// POSTE
+		if(isset($_POST['newP1']) || isset($_POST['newP2'])) {
+			$intitulePoste = "";
+			if(isset($_POST['newP1']) && !empty($_POST['newP1'])) {
+				$intitulePoste .= "".$_POST['newP1'].";";
+			}
+			if(isset($_POST['newP2']) && !empty($_POST['newP2'])) {
+				$intitulePoste .= "".$_POST['newP2'].";";
+			}
+
+			$insertP = $bdd->prepare("UPDATE profil SET intituleExperience = ? WHERE idUser = ?");
+			$insertP->execute(array($intitulePoste, $_SESSION['id']));
+
+		}
+
+		$exPoste = $bdd->prepare('SELECT intituleExperience FROM profil WHERE idUser = ?');
+		$exPoste->execute(array($_SESSION['id']));
+		$Pos = $exPoste->fetch();
+		$P = explode(';',$Pos['intituleExperience']);
+
+		// Entreprise
+		if(isset($_POST['newEN1']) || isset($_POST['newEN2'])) {
+			$intituleEntreprise = "";
+			if(isset($_POST['newEN1']) && !empty($_POST['newEN1'])) {
+				$intituleEntreprise .= "".$_POST['newEN1'].";";
+			}
+			if(isset($_POST['newEN2']) && !empty($_POST['newEN2'])) {
+				$intituleEntreprise .= "".$_POST['newEN2'].";";
+			}
+
+			$insertEN = $bdd->prepare("UPDATE profil SET intituleEntreprise = ? WHERE idUser = ?");
+			$insertEN->execute(array($intituleEntreprise, $_SESSION['id']));
+
+		}
+
+		$exIntituleEntreprise = $bdd->prepare('SELECT intituleEntreprise FROM profil WHERE idUser = ?');
+		$exIntituleEntreprise->execute(array($_SESSION['id']));
+		$InEn = $exIntituleEntreprise->fetch();
+		$IEn = explode(';',$InEn['intituleEntreprise']);
+
+		//Description poste
+		if(isset($_POST['newDescP1']) || isset($_POST['newDescP2'])) {
+			$descriptionPoste = "";
+			if(isset($_POST['newDescP1']) && !empty($_POST['newDescP1'])) {
+				$descriptionPoste .= "".$_POST['newDescP1'].";";
+			}
+			if(isset($_POST['newDescP2']) && !empty($_POST['newDescP2'])) {
+				$descriptionPoste .= "".$_POST['newDescP2'].";";
+			}
+
+			$insertDP = $bdd->prepare("UPDATE profil SET descriptionExperience = ? WHERE idUser = ?");
+			$insertDP->execute(array($descriptionPoste, $_SESSION['id']));
+
+		}
+
+		$exDescriptionPoste = $bdd->prepare('SELECT descriptionExperience FROM profil WHERE idUser = ?');
+		$exDescriptionPoste->execute(array($_SESSION['id']));
+		$DescPos = $exDescriptionPoste->fetch();
+		$DP = explode(';',$DescPos['descriptionExperience']);
+		
+		// Formation
+		if(isset($_POST['newFor1']) || isset($_POST['newFor2'])) {
+			$intituleFormation = "";
+			if(isset($_POST['newFor1']) && !empty($_POST['newFor1'])) {
+				$intituleFormation .= "".$_POST['newFor1'].";";
+			}
+			if(isset($_POST['newFor2']) && !empty($_POST['newFor2'])) {
+				$intituleFormation .= "".$_POST['newFor2'].";";
+			}
+
+			$insertFor = $bdd->prepare("UPDATE profil SET intituleFormation = ? WHERE idUser = ?");
+			$insertFor->execute(array($intituleFormation, $_SESSION['id']));
+
+		}
+
+		$exFormation = $bdd->prepare('SELECT intituleFormation FROM profil WHERE idUser = ?');
+		$exFormation->execute(array($_SESSION['id']));
+		$Form = $exFormation->fetch();
+		$F = explode(';',$Form['intituleFormation']);
+
+		// Ecole
+		if(isset($_POST['newEco1']) || isset($_POST['newEco2'])) {
+			$intituleEcole = "";
+			if(isset($_POST['newEco1']) && !empty($_POST['newEco1'])) {
+				$intituleEcole .= "".$_POST['newEco1'].";";
+			}
+			if(isset($_POST['newEco2']) && !empty($_POST['newEco2'])) {
+				$intituleEcole .= "".$_POST['newEco2'].";";
+			}
+
+			$insertEN = $bdd->prepare("UPDATE profil SET intituleEcole = ? WHERE idUser = ?");
+			$insertEN->execute(array($intituleEcole, $_SESSION['id']));
+
+		}
+
+		$exIntituleEcole = $bdd->prepare('SELECT intituleEcole FROM profil WHERE idUser = ?');
+		$exIntituleEcole->execute(array($_SESSION['id']));
+		$InEc = $exIntituleEcole->fetch();
+		$IE = explode(';',$InEc['intituleEcole']);
+
+		//Description formation
+		if(isset($_POST['newDescF1']) || isset($_POST['newDescF2'])) {
+			$descriptionFormation = "";
+			if(isset($_POST['newDescF1']) && !empty($_POST['newDescF1'])) {
+				$descriptionFormation .= "".$_POST['newDescF1'].";";
+			}
+			if(isset($_POST['newDescF2']) && !empty($_POST['newDescF2'])) {
+				$descriptionFormation .= "".$_POST['newDescF2'].";";
+			}
+
+			$insertDF = $bdd->prepare("UPDATE profil SET descriptionFormation = ? WHERE idUser = ?");
+			$insertDF->execute(array($descriptionFormation, $_SESSION['id']));
+
+		}
+
+		$exDescriptionFormation = $bdd->prepare('SELECT descriptionFormation FROM profil WHERE idUser = ?');
+		$exDescriptionFormation->execute(array($_SESSION['id']));
+		$DescFor = $exDescriptionFormation->fetch();
+		$DF = explode(';',$DescFor['descriptionFormation']);
+
 		if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
 
 			$tailleMax = 2097152;
@@ -362,6 +482,24 @@
 				<div>
 					<label for="newTel">Votre description</label>
 					<textarea name="newDesc" id="newDesc" cols="30" rows="10"><?php echo $userInfo['description']; ?></textarea>
+				</div>
+				<div>
+					<label>Expériences professionnelles</label>
+					<input type="text" placeholder="Poste" name="newP1" id="newP1" value="<?php if(!empty($P[0])) { echo $P[0]; } ?>">
+					<input type="text" placeholder="Nom de l'entreprise" name="nexEN1" id="nexEN1" value="<?php if(!empty($IEn[0])) { echo $IEn[0]; } ?>">
+					<textarea placeholder="Description du poste" name="newDescP1" id="newDescP1" cols="30" rows="10"><?php if(!empty($DP[0])) { echo $DP[0]; } ?></textarea>
+					<input type="text" placeholder="Poste" name="newP2" id="newP2" value="<?php if(!empty($P[1])) { echo $P[1]; } ?>">
+					<input type="text" placeholder="Nom de l'entreprise" name="nexEN2" id="nexEN2" value="<?php if(!empty($IEn[1])) { echo $IEn[1]; } ?>">
+					<textarea placeholder="Description du poste" name="newDescP2" id="newDescP2" cols="30" rows="10"><?php if(!empty($DP[1])) { echo $DP[1]; } ?></textarea>
+				</div>
+				<div>
+					<label>Cursus scolaire</label>
+					<input type="text" placeholder="Formation" name="newFor1" id="newFor1" value="<?php if(!empty($F[0])) { echo $F[0]; } ?>">
+					<input type="text" placeholder="École" name="newEco1" id="newEco1" value="<?php if(!empty($IE[0])) { echo $IE[0]; } ?>">
+					<textarea placeholder="Description de la formation" name="newDescF1" id="newDescF1" cols="30" rows="10"><?php if(!empty($DF[0])) { echo $DF[0]; } ?></textarea>
+					<input type="text" placeholder="Formation" name="newFor2" id="newFor2" value="<?php if(!empty($F[1])) { echo $F[1]; } ?>">
+					<input type="text" placeholder="École" name="newEco2" id="newEco2" value="<?php if(!empty($IE[1])) { echo $IE[1]; } ?>">
+					<textarea placeholder="Description de la formation" name="newDescF2" id="newDescF2" cols="30" rows="10"><?php if(!empty($DF[1])) { echo $DF[1]; } ?></textarea>
 				</div>
 				<div>
 					<label for="competences">Vos compétences</label>
