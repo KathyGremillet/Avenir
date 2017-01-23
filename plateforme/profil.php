@@ -69,6 +69,7 @@
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="profil content-container">
+			<a href="deconnexion.php" title="Déconnexion" class="btn btn-retour deco">Déconnexion</a>
 			<div class="presentation row">
 				<div class=" col-lg-8">
 					<div class="blocs">
