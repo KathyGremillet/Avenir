@@ -88,17 +88,17 @@
 								<h2><?php echo $userInfo['prenom'] . ' ' . $userInfo['nom']; ?></h2>
 								<div class="coordonnees row">
 									<div class="col-lg-3">
-										<span class="typcn typcn-location"></span> <?php if(isset($userInfo['ville'])) { echo $userInfo['ville']; } ?>
+										<span class="typcn typcn-location"></span> <?php if(!empty($userInfo['ville'])) { echo $userInfo['ville']; } else { echo "Vous n'avez pas rempli la ville."; } ?>
 									</div>
 									<div class="col-lg-5">
-										<span class="typcn typcn-device-phone"></span> <?php if(isset($userInfo['tel'])) { echo $userInfo['tel']; } ?>
+										<span class="typcn typcn-device-phone"></span> <?php if(!empty($userInfo['tel'])) { echo $userInfo['tel']; } else { echo "Vous n'avez pas rempli le téléphone."; } ?>
 									</div>
 									<div class="col-lg-4">
 										<span class="typcn typcn-mail"></span> <?php echo $userInfo['mail']; ?>
 									</div>
 								</div>
 								<p>
-									<?php echo $userInfo['description']; ?>
+									<?php if(!empty($userInfo['description'])) { echo $userInfo['description']; } else { echo "Vous n'avez pas rempli la partie description."; } ?>
 								</p>						
 							</div>
 						</div>
@@ -126,14 +126,18 @@
 					<h3><span class="typcn typcn-briefcase"> Expérience professionnelle</h3>
 					<div class="blocs">
 						<div>
-							<?php if(!empty($P[0])) { echo '<h4>'.$P[0].'</h4>'; } ?>
-							<?php if(!empty($IEn[0])) { echo '<h5>'.$IEn[0].'</h5>'; } ?>
-							<?php if(!empty($DP[0])) { echo '<p>'.$DP[0].'</p>'; } ?>
+							<?php if(empty($P[0]) || empty($IEn[0]) || empty($DP[0])) { echo 'Vous n\'avez pas rempli toutes les informations de votre cursus'; } else { 
+								if(!empty($P[0])) { echo '<h4>'.$P[0].'</h4>'; }
+								if(!empty($IEn[0])) { echo '<h5>'.$IEn[0].'</h5>'; }
+								if(!empty($DP[0])) { echo '<p>'.$DP[0].'</p>'; }
+							} ?>
 						</div>
 						<div>
-							<?php if(!empty($P[1])) { echo '<h4>'.$P[1].'</h4>'; } ?>
-							<?php if(!empty($IEn[1])) { echo '<h5>'.$IEn[1].'</h5>'; } ?>
-							<?php if(!empty($DP[1])) { echo '<p>'.$DP[1].'</p>'; } ?>
+							<?php if(empty($P[1]) || empty($IEn[1]) || empty($DP[1])) { echo 'Vous n\'avez pas rempli toutes les informations de votre cursus'; } else { 
+								if(!empty($P[1])) { echo '<h4>'.$P[1].'</h4>'; }
+								if(!empty($IEn[1])) { echo '<h5>'.$IEn[1].'</h5>'; }
+								if(!empty($DP[1])) { echo '<p>'.$DP[1].'</p>'; }
+							} ?>
 						</div>
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
@@ -142,14 +146,18 @@
 					<h3><span class="typcn typcn-mortar-board"> Cursus scolaire</h3>
 					<div class="blocs">
 						<div>
-							<?php if(!empty($F[0])) { echo '<h4>'.$F[0].'</h4>'; } ?>
-							<?php if(!empty($IE[0])) { echo '<h5>'.$IE[0].'</h5>'; } ?>
-							<?php if(!empty($DF[0])) { echo '<p>'.$DF[0].'</p>'; } ?>
+							<?php if(empty($F[0]) || empty($IE[0]) || empty($DF[0])) { echo 'Vous n\'avez pas rempli toutes les informations de votre cursus'; } else { 
+								if(!empty($F[0])) { echo '<h4>'.$F[0].'</h4>'; }
+								if(!empty($IE[0])) { echo '<h5>'.$IE[0].'</h5>'; }
+								if(!empty($DF[0])) { echo '<p>'.$DF[0].'</p>'; }
+							} ?>
 						</div>
 						<div>
-							<?php if(!empty($F[1])) { echo '<h4>'.$F[1].'</h4>'; } ?>
-							<?php if(!empty($IE[1])) { echo '<h5>'.$IE[1].'</h5>'; } ?>
-							<?php if(!empty($DF[1])) { echo '<p>'.$DF[1].'</p>'; } ?>
+							<?php if(empty($F[1]) || empty($IE[1]) || empty($DF[1])) { echo 'Vous n\'avez pas rempli toutes les informations de votre cursus'; } else {
+								if(!empty($F[1])) { echo '<h4>'.$F[1].'</h4>'; }
+								if(!empty($IE[1])) { echo '<h5>'.$IE[1].'</h5>'; }
+								if(!empty($DF[1])) { echo '<p>'.$DF[1].'</p>'; }
+							} ?>
 						</div>
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
@@ -159,22 +167,26 @@
 				<div class="competences col-lg-6">
 					<h3><span class="typcn typcn-puzzle-outline"></span> Compétences</h3>
 					<ul>
-						<?php if(!empty($C[0])) { echo '<li>'.$C[0].'</li>'; } ?>
-						<?php if(!empty($C[1])) { echo '<li>'.$C[1].'</li>'; } ?>
-						<?php if(!empty($C[2])) { echo '<li>'.$C[2].'</li>'; } ?>
-						<?php if(!empty($C[3])) { echo '<li>'.$C[3].'</li>'; } ?>
-						<?php if(!empty($C[4])) { echo '<li>'.$C[4].'</li>'; } ?>
+						<?php if(empty($C[0])) { echo 'Vous n\'avez pas rempli vos compétences'; } else {
+							if(!empty($C[0])) { echo '<li>'.$C[0].'</li>'; }
+							if(!empty($C[1])) { echo '<li>'.$C[1].'</li>'; }
+							if(!empty($C[2])) { echo '<li>'.$C[2].'</li>'; }
+							if(!empty($C[3])) { echo '<li>'.$C[3].'</li>'; }
+							if(!empty($C[4])) { echo '<li>'.$C[4].'</li>'; }
+						} ?>
 					</ul>
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
 				<div class="ctr-interets col-lg-6">
 					<h3><span class="typcn typcn-heart-outline"></span> Centres d'intérêts</h3>
 					<ul>
-						<?php if(!empty($CI[0])) { echo '<li>'.$CI[0].'</li>'; } ?>
-						<?php if(!empty($CI[1])) { echo '<li>'.$CI[1].'</li>'; } ?>
-						<?php if(!empty($CI[2])) { echo '<li>'.$CI[2].'</li>'; } ?>
-						<?php if(!empty($CI[3])) { echo '<li>'.$CI[3].'</li>'; } ?>
-						<?php if(!empty($CI[4])) { echo '<li>'.$CI[4].'</li>'; } ?>
+						<?php if(empty($CI[0])) { echo 'Vous n\'avez pas rempli vos centres d\'intérêts'; } else {
+							if(!empty($CI[0])) { echo '<li>'.$CI[0].'</li>'; }
+							if(!empty($CI[1])) { echo '<li>'.$CI[1].'</li>'; }
+							if(!empty($CI[2])) { echo '<li>'.$CI[2].'</li>'; }
+							if(!empty($CI[3])) { echo '<li>'.$CI[3].'</li>'; }
+							if(!empty($CI[4])) { echo '<li>'.$CI[4].'</li>'; }
+						} ?>
 					</ul>
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>

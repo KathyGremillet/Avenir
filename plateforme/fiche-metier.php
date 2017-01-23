@@ -15,7 +15,7 @@
 		$exDesc = $bdd->prepare('SELECT description FROM fiche_metier WHERE id = ?');
 		$exDesc->execute(array($_GET['id']));
 		$description = $exDesc->fetch();
-		$desc = explode(';',$description['description']);
+		$desc = explode('|',$description['description']);
 
 		$exComp = $bdd->prepare('SELECT competencesRequises FROM fiche_metier WHERE id = ?');
 		$exComp->execute(array($_GET['id']));
@@ -74,9 +74,10 @@
 						<div class="competences">
 							<h4>Compétences requises</h4>
 							<ul>
-								<li><?php echo $comp[0]; ?></li>
-								<li><?php echo $comp[1]; ?></li>
-								<li><?php echo $comp[2]; ?></li>
+								<?php 
+								if(!empty($comp[0])) { echo '<li>'.$comp[0].'</li>'; } 
+								if(!empty($comp[1])) { echo '<li>'.$comp[1].'</li>'; }
+								if(!empty($comp[2])) { echo '<li>'.$comp[2].'</li>'; } ?>
 							</ul>
 						</div>
 						

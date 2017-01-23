@@ -42,16 +42,7 @@
 
 		}
 
-		if(isset($_POST['newAge']) AND !empty($_POST['newAge'])  AND $_POST['newAge'] != $userInfo['age']){
-
-			$updateAge = htmlspecialchars($_POST['newAge']);
-			$insertAge = $bdd->prepare("UPDATE user SET age = ? WHERE id = ?");
-			$insertAge->execute(array($updateAge, $_SESSION['id']));
-			header('Location: profil.php?id=' .$_SESSION["id"]);		
-
-		}
-
-		if(isset($_POST['newAdresse']) AND !empty($_POST['newAdresse'])  AND $_POST['newAdresse'] != $userInfo['adresse']){
+		if(isset($_POST['newAdresse']) AND $_POST['newAdresse'] != $userInfo['adresse']){
 
 			$updateAdresse = htmlspecialchars($_POST['newAdresse']);
 			$insertAdresse = $bdd->prepare("UPDATE user SET adresse = ? WHERE id = ?");
@@ -60,7 +51,7 @@
 
 		}
 
-		if(isset($_POST['newAdresse2']) AND !empty($_POST['newAdresse2'])  AND $_POST['newAdresse2'] != $userInfo['adresse2']){
+		if(isset($_POST['newAdresse2']) AND $_POST['newAdresse2'] != $userInfo['adresse2']){
 
 			$updateAdresse2 = htmlspecialchars($_POST['newAdresse2']);
 			$insertAdresse2 = $bdd->prepare("UPDATE user SET adresse2 = ? WHERE id = ?");
@@ -69,7 +60,7 @@
 
 		}
 
-		if(isset($_POST['newCP']) AND !empty($_POST['newCP'])  AND $_POST['newCP'] != $userInfo['cp']){
+		if(isset($_POST['newCP']) AND $_POST['newCP'] != $userInfo['cp']){
 
 			$updateCP = htmlspecialchars($_POST['newCP']);
 			$insertCP = $bdd->prepare("UPDATE user SET cp = ? WHERE id = ?");
@@ -78,7 +69,7 @@
 
 		}
 
-		if(isset($_POST['newVille']) AND !empty($_POST['newVille'])  AND $_POST['newVille'] != $userInfo['ville']){
+		if(isset($_POST['newVille']) AND $_POST['newVille'] != $userInfo['ville']){
 
 			$updateVille = htmlspecialchars($_POST['newVille']);
 			$insertVille = $bdd->prepare("UPDATE user SET ville = ? WHERE id = ?");
@@ -87,7 +78,7 @@
 
 		}
 
-		if(isset($_POST['newTel']) AND !empty($_POST['newTel'])  AND $_POST['newTel'] != $userInfo['tel']){
+		if(isset($_POST['newTel']) AND $_POST['newTel'] != $userInfo['tel']){
 
 			$updateVille = htmlspecialchars($_POST['newTel']);
 			$insertVille = $bdd->prepare("UPDATE user SET tel = ? WHERE id = ?");
@@ -95,7 +86,7 @@
 			header('Location: profil.php?id=' .$_SESSION["id"]);		
 
 		}
-		if(isset($_POST['newDesc']) AND !empty($_POST['newDesc'])  AND $_POST['newDesc'] != $userInfo['description']){
+		if(isset($_POST['newDesc']) AND $_POST['newDesc'] != $userInfo['description']){
 
 			$updateVille = htmlspecialchars($_POST['newDesc']);
 			$insertVille = $bdd->prepare("UPDATE user SET description = ? WHERE id = ?");
@@ -454,10 +445,6 @@
 				<div>
 					<label for="newPassword">Confirmez votre mot de passe</label>
 					<input type="password" id="newPasswordConfirm" name="newPasswordConfirm" placeholder="Confirmez votre mot de passe">
-				</div>
-				<div>
-					<label for="newAge">Votre âge</label>
-					<input type="text" placeholder="Votre âge" name="newAge" id="newAge" value="<?php echo $userInfo['age']; ?>">
 				</div>
 				<div>
 					<label for="newAdresse">Votre adresse</label>

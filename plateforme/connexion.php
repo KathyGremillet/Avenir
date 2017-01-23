@@ -81,6 +81,8 @@
 
 				<span class="separation"></span>
 
+				<a href="inscription.php">Se créer un compte</a>
+
 				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Connectez-vous avec Facebook !</a>
 
 			</div>
