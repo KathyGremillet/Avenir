@@ -34,7 +34,8 @@
 	<header class="" id="main-header">
 		<div class="nav-menu">			
 			<div class="logo">
-				<img src="../images/logo-avenir-baseline.png" alt="Avenir logotype">
+				<span class="typcn typcn-th-menu"></span>
+				<a href="accueil.php"><img src="../images/logo-avenir-baseline.png" alt="Avenir logotype"></a>
 				<h1 class="">Avenir</h1>
 			</div>
 			<nav class="menu-list">

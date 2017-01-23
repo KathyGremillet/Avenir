@@ -85,10 +85,19 @@ nav{
 .nav-menu{
 	.logo {
 		padding: 4em 0;
+		position: relative;
 
 		img{
 			width: 200px;
 		}
+	}
+	.typcn-th-menu{
+		display: none;
+		color: $secondary-color;
+		font-size: 1.5em;
+	    position: absolute;
+	    left: 5%;
+	    top: .8em;
 	}	
 }
 
@@ -830,11 +839,78 @@ h2{
 /********************
 *** MEDIA QUERIES *** 
 *********************/
+@media all and (max-width: $lg-screen){
+	header{
+		width: 200px;
+	}
+	.nav-menu {
+		.logo {
+		    padding: 3em 0;
+
+		    img{
+		    	max-width: 80%;
+		    }
+		}
+	}
+	nav li a {
+	    padding: 0 .8em 0 1.2em;
+	}
+	#main-content{
+		padding-left: 200px;
+	}
+	.accueil .container-content{
+		width: 100%;
+	}
+	.news .bloc-news h2{
+		font-size: 1.8em;
+	}
+}
+@media all and (max-width: $md-screen){
+
+}
 @media all and (max-width: $sm-screen){
+	header{
+		border-bottom: 1px solid darken($primary-color, 20);
+		border-right: 0;
+		height: auto;
+		width: 100%;
+	}
+	.nav-menu{		
+		.logo {
+			padding: .2em 0 .5em;
+		}
+		.typcn-th-menu{
+			display: inline-block;
+		}
+	}
+	nav.active{
+		display: block;
+	}
+	.menu-list{
+		display: none;
+	}
+	#main-content{
+		padding-left: 0px;
+		padding-top: 70px;
+	}
+	#second-nav{
+		.text{
+			display: none;
+		}
+		li{
+			padding: .2em .5em;
+		}
+		.search-panel {
+			padding: 0 .5em;
+			input{
+				width: 65%;
+			}
+		}		
+	}	
 	.connexion{
 		.col-lg-8{
 			height: 240px;
-		}
+		} 
 		.col-lg-4{
 			height: auto;
 			padding: 1em 2em;
