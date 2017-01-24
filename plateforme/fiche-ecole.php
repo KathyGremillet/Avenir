@@ -8,6 +8,7 @@
 		$reqUser->execute(array($_SESSION['id']));
 		$userInfo = $reqUser->fetch();
 
+
 	$page = "M'orienter";
     $description = "Avenir - La plateforme de la réoriention facile - Fiche métier";
 

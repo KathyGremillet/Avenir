@@ -199,6 +199,8 @@
 				$intituleEntreprise .= "".$_POST['newEN2'].";";
 			}
 
+			
+
 			$insertEN = $bdd->prepare("UPDATE profil SET intituleEntreprise = ? WHERE idUser = ?");
 			$insertEN->execute(array($intituleEntreprise, $_SESSION['id']));
 
@@ -473,7 +475,7 @@
 				<div>
 					<label>Expériences professionnelles</label>
 					<input type="text" placeholder="Poste" name="newP1" id="newP1" value="<?php if(!empty($P[0])) { echo $P[0]; } ?>">
-					<input type="text" placeholder="Nom de l'entreprise" name="nexEN1" id="nexEN1" value="<?php if(!empty($IEn[0])) { echo $IEn[0]; } ?>">
+					<input type="text" placeholder="Nom de l'entreprise" name="newEN1" id="newEN1" value="<?php if(!empty($IEn[0])) { echo $IEn[0]; } ?>">
 					<textarea placeholder="Description du poste" name="newDescP1" id="newDescP1" cols="30" rows="10"><?php if(!empty($DP[0])) { echo $DP[0]; } ?></textarea>
 					<input type="text" placeholder="Poste" name="newP2" id="newP2" value="<?php if(!empty($P[1])) { echo $P[1]; } ?>">
 					<input type="text" placeholder="Nom de l'entreprise" name="nexEN2" id="nexEN2" value="<?php if(!empty($IEn[1])) { echo $IEn[1]; } ?>">
