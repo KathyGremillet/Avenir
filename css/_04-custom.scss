@@ -689,11 +689,14 @@ h2{
 		box-sizing: border-box;
 		margin-right: .5em;
 		width: 600px;
+		max-width: 100%;
 	}
 	select{
 		border: 0;
 		margin-right: .5em;
+		margin-bottom: .5em;
 		padding: .8em 1em;
+		max-width: 100%;
 	}
 	.results{
 		background-color: $primary-color;
@@ -989,7 +992,10 @@ a.deco{
 	}
 }
 @media all and (max-width: $md-screen){
-
+	.recherche .results{
+		overflow: hidden;
+		padding: 1em;
+	}
 }
 @media all and (max-width: $sm-screen){
 	header{
@@ -1043,6 +1049,10 @@ a.deco{
 
 	.complete-profile h2{
 		font-size: 1.8em;
+	}
+	.recherche table td{
+		display: block;
+		width: 100% !important;
 	}
 }
 @media all and (max-width: $xs-screen){
