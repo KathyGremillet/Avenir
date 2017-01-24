@@ -835,6 +835,93 @@ h2{
 	}
 }
 
+/*** MON CONSEILLER ***/
+.conseiller{
+	.avantages, .offres{	
+		padding: 1.2em 0;	
+		text-align: center;
+
+		h2{
+			font-size: 2em;
+			margin-bottom: 2em;
+		}
+		h3{
+			text-transform: uppercase;
+		}
+	}
+	.avantages{
+		span{
+			font-size: 3em;
+		}
+	}
+	.offres{
+		margin-bottom: 3em;
+		h2{
+			margin-top: 2.5em;
+		}
+		h3{
+			color: $primary-color;
+			margin: 20px 0;
+			display: inline-block;
+			vertical-align: middle;			
+		}
+		> div{
+			margin-bottom: 1.5em;
+		}
+		.offre{			
+			background-color: $tertiary-color;
+		}
+		.premium{
+			.offre{
+				background-color: $quaternary-color;
+			}
+			h3{
+				font-size: 2.5em;
+				line-height: .6;
+
+				span{
+					font-size: .4em;
+				}
+			}
+			.list{
+				border: 1px solid $quaternary-color;
+			}
+		} 
+		.freemium{
+			a.btn{
+				background-color: $tertiary-color;
+
+				&:hover{
+					background-color: $quaternary-color;
+				}
+			}
+		}
+		.list{
+			background-color: $primary-color;
+			border: 1px solid $tertiary-color;
+			padding: .8em;
+		}
+		ul{
+			margin: 0;
+			padding-left: 0;
+		}
+		li{
+			padding: 1em .2em;
+			border-bottom: 1px solid darken($primary-color, 20);
+
+			&:last-child{
+				border: 0;
+			}
+		}
+
+	}
+}
+
+a.deco{
+	float: right;
+	margin-right: 1em;
+	margin-bottom: 2em;
+}
 
 /********************
 *** MEDIA QUERIES *** 
@@ -858,8 +945,8 @@ h2{
 	#main-content{
 		padding-left: 200px;
 	}
-	.accueil .container-content{
-		width: 100%;
+	.container-content{
+		width: 95%;
 	}
 	.news .bloc-news h2{
 		font-size: 1.8em;

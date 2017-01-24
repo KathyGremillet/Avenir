@@ -26,7 +26,7 @@
 				<a href="editionProfil.php" class="btn">Je fonce</a>
 			</div>
 			<div class="news row container-content">
-				<div class="col-lg-4 bloc-news">
+				<div class="col-lg-4 col-sm-12 bloc-news">
 					<a href="top10-jobs.php" title="Top 10 des jobs du futur">
 						<div class="">
 							<h2>Top 10</h2>
@@ -34,7 +34,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-4 bloc-news">
+				<div class="col-lg-4 col-sm-12 bloc-news">
 					<a href="doriann.php" title="Portrait de Doriann">
 						<div class="">
 							<h2>Doriann</h2>
@@ -42,7 +42,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-4 bloc-news">
+				<div class="col-lg-4 col-sm-12 bloc-news">
 					<a href="top5-ecoles-commerce.php" title="Top 5 des écoles de commerce">
 						<div class="">
 							<h2>Top 5</h2>
@@ -50,14 +50,14 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-8 bloc-news">
+				<div class="col-lg-8 col-sm-12 bloc-news">
 					<div class="">
 						<h2>Le sais-tu ?</h2>
 						<p>61% des élèves à la fac arrêtent dès la première année.<br/>
 							Alors destress tu n'est pas le seul.</p>
 					</div>
 				</div>
-				<div class="col-lg-4 bloc-news">
+				<div class="col-lg-4 col-sm-12 bloc-news">
 					<a href="event.php" title="Les événements">
 						<div class="">
 							<img src="../images/icon-event.png">
