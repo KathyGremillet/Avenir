@@ -112,6 +112,10 @@
 				<span class="separation"></span>
 
 				<a href="<?php echo $loginUrl ?>" alt="Se connecter avec Facebook" class="btn-fb"><span><img src="../images/icon-btn-facebook.png" alt="Icône Facebook"></span> Inscrivez-vous avec Facebook !</a>
+			
+				<p>OU</p>
+
+				<div><a href="connexion.php">Se connecter</a></div>
 			</div>
 		</div>
 	</div>

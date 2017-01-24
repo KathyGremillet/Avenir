@@ -69,12 +69,12 @@
 		<?php include('../includes/secondNav.php'); ?>
 
 		<div class="profil content-container">
-			<a href="deconnexion.php" title="Déconnexion" class="btn btn-retour deco">Déconnexion</a>
+			<a href="deconnexion.php" title="Déconnexion" class="btn btn-retour deco"><span class="typcn typcn-power-outline"></span> Déconnexion</a>
 			<div class="presentation row">
-				<div class=" col-lg-8">
+				<div class=" col-lg-8 col-md-12">
 					<div class="blocs">
 						<div class="clearfix">
-							<div class="avatar col-lg-4">
+							<div class="avatar">
 								<?php
 									if(!empty($userInfo['avatar'])) {
 
@@ -85,18 +85,18 @@
 									}
 								?>
 							</div>	
-							<div class="infos col-lg-8">
+							<div class="infos ">
 								<h2><?php echo $userInfo['prenom'] . ' ' . $userInfo['nom']; ?></h2>
-								<div class="coordonnees row">
-									<div class="col-lg-3">
-										<span class="typcn typcn-location"></span> <?php if(!empty($userInfo['ville'])) { echo $userInfo['ville']; } else { echo "Vous n'avez pas rempli la ville."; } ?>
-									</div>
-									<div class="col-lg-5">
-										<span class="typcn typcn-device-phone"></span> <?php if(!empty($userInfo['tel'])) { echo $userInfo['tel']; } else { echo "Vous n'avez pas rempli le téléphone."; } ?>
-									</div>
-									<div class="col-lg-4">
-										<span class="typcn typcn-mail"></span> <?php echo $userInfo['mail']; ?>
-									</div>
+								<div class="coordonnees">
+									
+										<p><span class="typcn typcn-location"></span>&nbsp;<?php if(!empty($userInfo['ville'])) { echo $userInfo['ville']; } else { echo "Vous n'avez pas rempli la ville."; } ?><p>
+									
+									
+										<p><span class="typcn typcn-device-phone"></span>&nbsp;<?php if(!empty($userInfo['tel'])) { echo $userInfo['tel']; } else { echo "Vous n'avez pas rempli le téléphone."; } ?><p>
+									
+									
+										<p><span class="typcn typcn-mail"></span>&nbsp;<?php echo $userInfo['mail']; ?><p>
+									
 								</div>
 								<p>
 									<?php if(!empty($userInfo['description'])) { echo $userInfo['description']; } else { echo "Vous n'avez pas rempli la partie description."; } ?>
@@ -107,14 +107,14 @@
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>					
 				</div>
-				<div class="cv col-lg-2">
+				<div class="docs cv col-lg-2 col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<div>
 						<img src="../images/profil-cv.png" alt="Icône CV">
 						<p>CV</p>
 						<a href="editionProfil.php"><span class="typcn typcn-download-outline"></span></a>
 					</div>
 				</div>
-				<div class="lm col-lg-2">
+				<div class="docs lm col-lg-2 col-md-4 col-sm-5 col-xs-10 col-xs-offset-1">
 					<div>
 						<img src="../images/profil-LettreDeMotivation.png" alt="Icône Lettre de motivation">
 						<p>Lettre de motivation</p>
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="exp-pro col-lg-6">
+				<div class="exp-pro col-lg-6 col-md-12">
 					<h3><span class="typcn typcn-briefcase"> Expérience professionnelle</h3>
 					<div class="blocs">
 						<div>
@@ -143,7 +143,7 @@
 						<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 					</div>
 				</div>
-				<div class="cursus col-lg-6">
+				<div class="cursus col-lg-6 col-md-12">
 					<h3><span class="typcn typcn-mortar-board"> Cursus scolaire</h3>
 					<div class="blocs">
 						<div>
@@ -165,7 +165,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="competences col-lg-6">
+				<div class="competences col-lg-6 col-md-12">
 					<h3><span class="typcn typcn-puzzle-outline"></span> Compétences</h3>
 					<ul>
 						<?php if(empty($C[0])) { echo 'Vous n\'avez pas rempli vos compétences'; } else {
@@ -178,7 +178,7 @@
 					</ul>
 					<a href="editionProfil.php"><span class="typcn typcn-edit"></span></a>
 				</div>
-				<div class="ctr-interets col-lg-6">
+				<div class="ctr-interets col-lg-6 col-md-12">
 					<h3><span class="typcn typcn-heart-outline"></span> Centres d'intérêts</h3>
 					<ul>
 						<?php if(empty($CI[0])) { echo 'Vous n\'avez pas rempli vos centres d\'intérêts'; } else {

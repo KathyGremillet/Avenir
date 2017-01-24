@@ -19,12 +19,12 @@
 
 		<div class="content-container">
 			<div>
-				<a href="accueil.php" title="Retour à l'accueil'" class="btn btn-retour">Retour à l'accueil</a>
+				<a href="accueil.php" title="Retour à l'accueil'" class="btn btn-retour"><span class="typcn typcn-arrow-left-thick"></span> Retour à l'accueil</a>
 			</div>
 
 			<div class="article">
 				<div class="header-article top10">
-					<a href="#" title="Ajouter aux favoris" class="btn btn-favoris">Ajouter aux favoris</a>
+					<a href="#" title="Ajouter aux favoris" class="btn btn-favoris"><span class="typcn typcn-star-outline"></span> Ajouter aux favoris</a>
 				</div>
 				<div class="content-article">
 					<h2>Top 10 des jobs du futur</h2>

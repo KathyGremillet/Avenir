@@ -44,13 +44,13 @@
 
 		<div class="fiches content-container">
 			<div>
-				<a href="recherche.php" title="Retour à la recherche" class="btn btn-retour">Retour à la recherche</a>
+				<a href="recherche.php" title="Retour à la recherche" class="btn btn-retour"><span class="typcn typcn-arrow-left-thick"></span> Retour à la recherche</a>
 				<a href="#" title="Etre accompagné" class="btn btn-secondaire">Je veux être accompagné</a>
 			</div>
 
 			<div class="fiche">
 				<div class="header-fiche">
-					<a href="#" title="Ajouter aux favoris" class="btn btn-favoris">Ajouter aux favoris</a>
+					<a href="#" title="Ajouter aux favoris" class="btn btn-favoris"><span class="typcn typcn-star-outline"></span> Ajouter aux favoris</a>
 					<h2><?php echo $ficheInfo['metier']; ?></h2>
 					<p><?php echo $ficheInfo['info']; ?></p>
 				</div>

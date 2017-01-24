@@ -413,12 +413,12 @@
 
 	<div class="content-container">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-8 col-md-12">
 				<h2>&Eacute;dition de mon profil</h2>
 				<span class="titre-deco"></span>
 			</div>
-			<div class="col-lg-4 retour-profil">
-				<a href='profil.php?id=<?php echo $_SESSION["id"]; ?>' class="btn btn-retour">Retourner sur mon profil</a>
+			<div class="col-lg-4 col-md-12 retour-profil">
+				<a href='profil.php?id=<?php echo $_SESSION["id"]; ?>' class="btn btn-retour"><span class="typcn typcn-arrow-left-thick"></span> Retourner sur mon profil</a>
 			</div>
 		</div>		
 
@@ -472,7 +472,7 @@
 					<label for="newTel">Votre description</label>
 					<textarea name="newDesc" id="newDesc" cols="30" rows="10"><?php echo $userInfo['description']; ?></textarea>
 				</div>
-				<div>
+				<div class="width100">
 					<label>Expériences professionnelles</label>
 					<input type="text" placeholder="Poste" name="newP1" id="newP1" value="<?php if(!empty($P[0])) { echo $P[0]; } ?>">
 					<input type="text" placeholder="Nom de l'entreprise" name="newEN1" id="newEN1" value="<?php if(!empty($IEn[0])) { echo $IEn[0]; } ?>">
@@ -481,7 +481,7 @@
 					<input type="text" placeholder="Nom de l'entreprise" name="newEN2" id="newEN2" value="<?php if(!empty($IEn[1])) { echo $IEn[1]; } ?>">
 					<textarea placeholder="Description du poste" name="newDescP2" id="newDescP2" cols="30" rows="10"><?php if(!empty($DP[1])) { echo $DP[1]; } ?></textarea>
 				</div>
-				<div>
+				<div class="width100">
 					<label>Cursus scolaire</label>
 					<input type="text" placeholder="Formation" name="newFor1" id="newFor1" value="<?php if(!empty($F[0])) { echo $F[0]; } ?>">
 					<input type="text" placeholder="École" name="newEco1" id="newEco1" value="<?php if(!empty($IE[0])) { echo $IE[0]; } ?>">
@@ -490,7 +490,7 @@
 					<input type="text" placeholder="École" name="newEco2" id="newEco2" value="<?php if(!empty($IE[1])) { echo $IE[1]; } ?>">
 					<textarea placeholder="Description de la formation" name="newDescF2" id="newDescF2" cols="30" rows="10"><?php if(!empty($DF[1])) { echo $DF[1]; } ?></textarea>
 				</div>
-				<div>
+				<div class="width100">
 					<label for="competences">Vos compétences</label>
 					<input type="text" name="newC1" id="newC1" value="<?php if(!empty($C[0])) { echo $C[0]; } ?>">
 					<input type="text" name="newC2" id="newC2" value="<?php if(!empty($C[1])) { echo $C[1]; } ?>">
@@ -498,7 +498,7 @@
 					<input type="text" name="newC4" id="newC4" value="<?php if(!empty($C[3])) { echo $C[3]; } ?>">
 					<input type="text" name="newC5" id="newC5" value="<?php if(!empty($C[5])) { echo $C[4]; } ?>">
 				</div>
-				<div>
+				<div class="width100">
 					<label for="centreInteret">Vos centres d'intérêts</label>
 					<input type="text" name="newCI1" id="newCI1" value="<?php if(!empty($CI[0])) { echo $CI[0]; } ?>">
 					<input type="text" name="newCI2" id="newCI2" value="<?php if(!empty($CI[1])) { echo $CI[1]; } ?>">

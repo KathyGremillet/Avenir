@@ -275,6 +275,9 @@ a.btn{
 	&:hover{
 		background-color: $tertiary-color;
 	}	
+	span{
+		font-size: 1.2em;
+	}
 }
 a.btn-secondaire{
 	background-color: $tertiary-color;
@@ -293,6 +296,9 @@ a.btn-retour{
 
 	&:hover{
 		color: $primary-color;
+	}
+	span{
+		font-size: 1.2em;
 	}
 }
 a.btn-favoris{
@@ -528,8 +534,15 @@ h2{
 	.row{
 		margin-bottom: 2em;
 	}
-	.presentation .blocs{
-		height: 100%;
+	.presentation{
+		.blocs{
+			height: 100%;
+			min-height: 260px;
+			margin-bottom: 1em;
+		}
+		.docs{
+			margin-bottom: 1em;
+		}
 	}
 	.avatar, .infos{
 		float: left;
@@ -545,6 +558,9 @@ h2{
 			width: 100%;
 			height: 100%;
 		}
+	}
+	.infos{
+		margin-left: 1em;
 	}
 	.cv, .lm{
 		div{
@@ -610,7 +626,14 @@ h2{
 	.ctr-interets li{
 		background-color: $tertiary-color;
 	}
+	.coordonnees{
+		p{
+			display: inline-block;
+			margin: 0 7px 0 0;
+		}
+	}
 }
+
 /*** EDITION PROFIL ***/
 .edit-profil{
 	.infos{
@@ -626,6 +649,7 @@ h2{
 	}
 	label{
 		display: inline-block;
+		font-weight: bold;
 		vertical-align: middle;
 		width: 250px;
 	}
@@ -637,6 +661,18 @@ h2{
 		width: auto;
 		padding: .8em 1.5em;
 		float: right;
+	}
+	textarea{
+		width: 100%;
+		margin-top: .5em;
+	}
+	.width100{
+		input{
+			width: 100%;
+		}
+		label{
+			margin: 1em 0 .5em;
+		}
 	}
 }
 
@@ -945,7 +981,7 @@ a.deco{
 	#main-content{
 		padding-left: 200px;
 	}
-	.container-content{
+	.container-content, .content-container{
 		width: 95%;
 	}
 	.news .bloc-news h2{
@@ -1003,6 +1039,10 @@ a.deco{
 			padding: 1em 2em;
 		}
 
+	}
+
+	.complete-profile h2{
+		font-size: 1.8em;
 	}
 }
 @media all and (max-width: $xs-screen){
