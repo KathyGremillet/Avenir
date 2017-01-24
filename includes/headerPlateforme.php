@@ -42,7 +42,7 @@
 			  <ul class="clearfix">
 			  	<li<?php if ($page == 'Accueil') {echo ' class="active"';} ?> ><a href="accueil.php?id=<?php echo $_SESSION['id']?>">Accueil</a></li>
 				<li<?php if ($page == 'Mes tests') {echo ' class="active"';} ?> ><a href="#">Mes tests</a></li>
-				<li<?php if ($page == 'M\'orienter') {echo ' class="active"';} ?> ><a href="recherche.php?id=<?php echo $_SESSION['id']?>"><span class="premium-tag">Premium</span> M'orienter</a></li>
+				<li<?php if ($page == 'M\'orienter') {echo ' class="active"';} ?> ><a href="recherche.php?id=<?php echo $_SESSION['id']?>">M'orienter</a></li>
 				<li<?php if ($page == 'Mon conseiller') {echo ' class="active"';} ?> ><a href="conseiller.php"><span class="premium-tag">Premium</span> Mon conseiller</a></li>	
 				<li<?php if ($page == 'Favoris') {echo ' class="active"';} ?> ><a href="#">Favoris</a></li>
 			  </ul>
