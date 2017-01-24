@@ -23,9 +23,14 @@
 		$comp = explode(';',$competences['competencesRequises']);
 
 		$exEtude = $bdd->prepare('SELECT etude FROM fiche_metier WHERE id = ?');
-		$exEtude->execute(array($_GET['id']));
+		$exEtude->execute(array($_GET['id']));	
 		$etudes = $exEtude->fetch();
-		$etu = explode(';',$etudes['etude']);
+		$etu = explode('|',$etudes['etude']);
+
+		$exFormation = $bdd->prepare('SELECT idFormationMetier FROM fiche_metier WHERE id = ?');
+		$exFormation->execute(array($_GET['id']));
+		$formations = $exFormation->fetch();
+		$for = explode(';',$formations['idFormationMetier']);
 
 	$page = "M'orienter";
     $description = "Avenir - La plateforme de la réoriention facile - Fiche métier";
@@ -74,7 +79,7 @@
 						<div class="competences">
 							<h4>Compétences requises</h4>
 							<ul>
-								<?php 
+								<?php
 								if(!empty($comp[0])) { echo '<li>'.$comp[0].'</li>'; } 
 								if(!empty($comp[1])) { echo '<li>'.$comp[1].'</li>'; }
 								if(!empty($comp[2])) { echo '<li>'.$comp[2].'</li>'; } ?>
@@ -89,37 +94,37 @@
 						<div>
 							<?php
 							if(!empty($etu[0])) { ?>
-								<p><a href="#"><?php echo $etu[0]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[0]; ?>"><?php echo $etu[0]; ?></a></p>
 							<?php } 
 							if(!empty($etu[1])) { ?>
-								<p><a href="#"><?php echo $etu[1]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[1]; ?>"><?php echo $etu[1]; ?></a></p>
 							<?php } 
 							if(!empty($etu[2])) { ?>
-								<p><a href="#"><?php echo $etu[2]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[2]; ?>"><?php echo $etu[2]; ?></a></p>
 							<?php }
 							if(!empty($etu[3])) { ?>
-								<p><a href="#"><?php echo $etu[3]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[3]; ?>"><?php echo $etu[3]; ?></a></p>
 							<?php }
 							if(!empty($etu[4])) { ?>
-								<p><a href="#"><?php echo $etu[4]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[4]; ?>"><?php echo $etu[4]; ?></a></p>
 							<?php }
 							if(!empty($etu[5])) { ?>
-								<p><a href="#"><?php echo $etu[5]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[5]; ?>"><?php echo $etu[5]; ?></a></p>
 							<?php }
 							if(!empty($etu[6])) { ?>
-								<p><a href="#"><?php echo $etu[6]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[6]; ?>"><?php echo $etu[6]; ?></a></p>
 							<?php } 
 							if(!empty($etu[7])) { ?>
-								<p><a href="#"><?php echo $etu[7]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[7]; ?>"><?php echo $etu[7]; ?></a></p>
 							<?php }
 							if(!empty($etu[8])) { ?>
-								<p><a href="#"><?php echo $etu[8]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[8]; ?>"><?php echo $etu[8]; ?></a></p>
 							<?php }
 							if(!empty($etu[9])) { ?>
-								<p><a href="#"><?php echo $etu[9]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[9]; ?>"><?php echo $etu[9]; ?></a></p>
 							<?php }
 							if(!empty($etu[10])) { ?>
-								<p><a href="#"><?php echo $etu[10]; ?></a></p>
+								<p><a href="fiche-formation.php?id=<?php echo $for[10]; ?>"><?php echo $etu[10]; ?></a></p>
 							<?php }
 
 							?>
